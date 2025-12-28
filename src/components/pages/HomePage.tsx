@@ -289,7 +289,7 @@ export default function HomePage() {
         </section>
 
         {/* --- RECENT HISTORY (Data Driven) --- */}
-        <section className="py-32 bg-soft-white/5 border-y border-soft-white/5">
+        <section className="mt-24 py-32 bg-soft-white/5 border-y border-soft-white/5">
           <div className="max-w-[120rem] mx-auto px-6 md:px-12">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
               <div>
