@@ -111,9 +111,7 @@ export default function HomePage() {
     <div ref={containerRef} className="min-h-screen bg-background text-soft-white selection:bg-primary selection:text-white overflow-x-clip">
       {/* Global Progress Bar */}
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-primary z-50 origin-left" style={{ scaleX }} />
-      
       <Header />
-
       <main className="relative">
         {/* --- HERO SECTION: The Stage --- */}
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
@@ -153,9 +151,7 @@ export default function HomePage() {
                 <Button
                   onClick={() => navigate('/purchase')}
                   className="bg-primary hover:bg-primary/90 text-white font-paragraph text-lg px-10 py-8 rounded-none border-l-4 border-white/20 transition-all hover:border-white"
-                >
-                  Comprar 1 Minuto — $3
-                </Button>
+                >{"Comprar - $3"}</Button>
                 <div className="flex items-center gap-4 text-soft-white/40 font-paragraph text-sm">
                   <Eye className="w-5 h-5" />
                   <span>Visto por todos los visitantes ahora</span>
@@ -329,7 +325,7 @@ export default function HomePage() {
                 ))
               ) : (
                 // Fallback placeholders if no data yet
-                [1, 2, 3, 4].map((_, idx) => (
+                ([1, 2, 3, 4].map((_, idx) => (
                   <FadeIn key={idx} delay={idx * 0.1} className="aspect-[4/5] relative group overflow-hidden bg-black border border-soft-white/5">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-full h-full bg-soft-white/5 animate-pulse" />
@@ -339,7 +335,7 @@ export default function HomePage() {
                       <p className="font-paragraph text-xs text-soft-white/40 uppercase">Espacio Disponible</p>
                     </div>
                   </FadeIn>
-                ))
+                )))
               )}
             </div>
           </div>
@@ -407,9 +403,7 @@ export default function HomePage() {
           </div>
         </section>
       </main>
-
       <Footer />
-      
       {/* Custom Styles for specific effects */}
       <style>{`
         .font-heading { font-family: 'Cormorant Garamond', serif; }
