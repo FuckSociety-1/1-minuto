@@ -133,10 +133,10 @@ export default function PurchasePage() {
                   type="file"
                   accept="image/*,video/*"
                   onChange={handleFileChange}
-                  className="bg-background border-soft-white/30 text-soft-white font-paragraph file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-primary file:text-primary-foreground file:font-paragraph file:text-sm hover:file:bg-primary/90"
+                  className="bg-background border-soft-white/30 text-soft-white font-paragraph file:mr-4 file:py-8 file:px-4 file:rounded-lg file:border-0 file:bg-primary file:text-primary-foreground file:font-paragraph file:text-sm hover:file:bg-primary/90"
                 />
                 {contentFile && (
-                  <p className="font-paragraph text-sm text-soft-white/90">
+                  <p className="font-paragraph text-sm text-soft-white/60">
                     Archivo seleccionado: {contentFile.name}
                   </p>
                 )}
