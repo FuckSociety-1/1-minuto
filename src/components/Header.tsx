@@ -8,9 +8,7 @@ export default function Header() {
           WorldMinute
         </Link>
         <div className="flex items-center gap-6">
-          <span className="font-paragraph text-sm text-primary border border-primary px-4 py-2 rounded-lg">
-            
-          </span>
+
         </div>
       </div>
     </header>
