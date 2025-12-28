@@ -1,0 +1,1079 @@
+{
+  "id": "7436e3fa-023a-4a2a-a0ad-46478e83a0f5",
+  "siteName": "1 Minuto",
+  "domainUrl": "1minutos.com",
+  "brandingPresets": [
+    {
+      "presetId": "00000000-2ca4-4f2c-9545-226a75e7c2b5",
+      "brandIdentity": {
+        "designSummary": "**Ephemeral Elegance: A Dark Minimalist Stage**\n\nThe Vision: To create a digital space that feels exclusive, mysterious, and fleeting, like a secret performance only visible for a minute. The design emphasizes the temporary nature of the content, creating a sense of urgency and curiosity. The core concept is a minimalist stage where user-generated content takes center stage, framed by darkness and subtle elegance.\n\n**Execution Blueprint:**\n1. The Void as a Frame: The background is a deep charcoal (#121212), providing maximum contrast and a sense of depth. All elements float within this void.\n2. Typographic Hierarchy: Use 'Cormorant Garamond' for headlines (the '1 Minuto' title, the countdown timer) to convey sophistication. Use 'Sora Light' for all supporting text to ensure readability without disrupting the minimalist aesthetic.\n3. The 8px Rhythm: All spacing (margins, padding, gaps) must adhere to an 8px base unit to maintain visual harmony and a sense of order.\n4. The Crimson Accent: A single accent color, #8B0000 (dark red), is used sparingly for the main call-to-action button ('Comprar 1 Minuto') and the countdown timer to draw the eye and create a sense of tension.",
+        "toneOfVoice": "Mysterious, exclusive, urgent, and elegant.",
+        "tones": [
+          "Mysterious",
+          "Exclusive",
+          "Urgent",
+          "Elegant"
+        ],
+        "designStyle": {
+          "primaryStyle": [
+            "Dark Minimalism",
+            "Elegant"
+          ],
+          "supportingStyles": [
+            "Modern",
+            "Functional"
+          ]
+        },
+        "palette": {
+          "colors": {
+            "primary": "#8B0000",
+            "primaryForeground": "#FFFFFF",
+            "secondary": "#FFFFFF",
+            "secondaryForeground": "#121212",
+            "background": "#121212",
+            "foreground": "#FFFFFF",
+            "customColors": [
+              {
+                "name": "softWhite",
+                "value": "#F0F0F0"
+              },
+              {
+                "name": "destructive",
+                "value": "#FF4500"
+              },
+              {
+                "name": "destructive-foreground",
+                "value": "#FFFFFF"
+              }
+            ]
+          },
+          "paletteUsageGuide": "Use the dark background to create a sense of mystery and exclusivity. Use the soft white for text to ensure readability. Use the dark red accent color sparingly to draw attention to key elements.",
+          "paletteAccessibilityNotes": "Ensure sufficient contrast between text and background colors for readability. Use a color contrast checker to verify WCAG AA compliance."
+        },
+        "typography": {
+          "headings": {
+            "font": {
+              "role": "Headings",
+              "fontFamily": "cormorantgaramond",
+              "fontJustification": ""
+            },
+            "headingsSimilarFonts": [],
+            "headingsUsageGuide": "Use Cormorant Garamond for the main title ('1 Minuto') and the countdown timer. This font conveys elegance and seriousness.",
+            "headingsAccessibilityNotes": "Ensure sufficient contrast between the heading text and the background color."
+          },
+          "paragraphs": {
+            "font": {
+              "role": "Paragraphs",
+              "fontFamily": "sora-light",
+              "fontJustification": ""
+            },
+            "paragraphsSimilarFonts": [],
+            "paragraphsUsageGuide": "Use Sora Light for all supporting text, such as the description ('Esto se muestra solo durante un minuto. Todo el mundo lo ve.') and legal disclaimers. This font is clean and legible.",
+            "paragraphsAccessibilityNotes": "Ensure sufficient contrast between the paragraph text and the background color."
+          },
+          "welcomeSectionTypography": {
+            "placement": "",
+            "implementation": ""
+          },
+          "fontSizes": [
+            {
+              "name": "xs",
+              "size": "0.75rem",
+              "lineHeight": "1",
+              "letterSpacing": "0.05em",
+              "fontWeight": "300"
+            },
+            {
+              "name": "sm",
+              "size": "0.875rem",
+              "lineHeight": "1.25",
+              "letterSpacing": "0.025em",
+              "fontWeight": "300"
+            },
+            {
+              "name": "base",
+              "size": "1rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.01em",
+              "fontWeight": "300"
+            },
+            {
+              "name": "lg",
+              "size": "1.125rem",
+              "lineHeight": "1.75",
+              "letterSpacing": "0.01em",
+              "fontWeight": "300"
+            },
+            {
+              "name": "xl",
+              "size": "1.25rem",
+              "lineHeight": "1.75",
+              "letterSpacing": "0.01em",
+              "fontWeight": "300"
+            },
+            {
+              "name": "2xl",
+              "size": "1.5rem",
+              "lineHeight": "2",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "3xl",
+              "size": "1.875rem",
+              "lineHeight": "2.25",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "4xl",
+              "size": "2.25rem",
+              "lineHeight": "2.5",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "5xl",
+              "size": "3rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "6xl",
+              "size": "3.75rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "7xl",
+              "size": "4.5rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "8xl",
+              "size": "6rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "9xl",
+              "size": "8rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ]
+        },
+        "layout": {
+          "layoutDna": {
+            "densitySpectrum": "Sparse",
+            "contrastSpectrum": "High Contrast",
+            "gridAlignmentSpectrum": "Symmetrical",
+            "negativeSpaceUsage": "Generous",
+            "textVsImageEmphasis": "Image Emphasis",
+            "complexitySpectrum": "Simple"
+          },
+          "grid": {
+            "compositionApproach": "Symmetrical Layout with Centralized Content",
+            "spacing": {
+              "columns": "12",
+              "rows": "Auto",
+              "gaps": "Base unit: 8px. All grid gaps are multiples of 8px (e.g., 16px, 24px, 32px)."
+            },
+            "margins": "Base unit: 8px. All margins are multiples of 8px (e.g., 16px, 24px, 32px).",
+            "padding": "Base unit: 8px. All padding is multiples of 8px (e.g., 16px, 24px, 32px)."
+          },
+          "heroSectionLayout": "**The Ephemeral Spotlight**\nComposition (Tailwind Spec): Full-screen container (h-screen grid place-items-center). Centralized content area (max-w-4xl w-full p-8). Countdown timer (text-7xl font-bold text-red-600 mb-4). Main content area for image/video (aspect-video w-full rounded-2xl overflow-hidden).\nSignature Hook (Framer Motion Spec): The countdown timer uses Framer Motion's `useTransform` and `useTime` to create a smooth, visually engaging animation. The timer text scales from `1.2` to `1` as the time approaches zero, creating a subtle pulse effect."
+        },
+        "components": {
+          "containers": "Method: Whitespace, Style: 40px vertical margin",
+          "images": "Layout Role: Full-bleed background with a fixed position to create a window effect on scroll. | Gallery Type: Interactive Slideshow: A full-viewport carousel with cinematic cross-fade transitions.",
+          "buttons": "Primary: background-color: #8B0000, color: #FFFFFF, border-radius: 8px, padding: 12px 24px. Secondary: background-color: transparent, color: #FFFFFF, border: 1px solid #FFFFFF, border-radius: 8px."
+        },
+        "graphicElements": {
+          "icons": "",
+          "illustrations": "",
+          "stickers": ""
+        }
+      },
+      "originImagesUrls": []
+    },
+    {
+      "presetId": "7d990c8f-c157-4460-a7a5-dc105dec9c53",
+      "brandIdentity": {
+        "designSummary": "This brand design embodies a refined, minimalistic, and elegant aesthetic with a warm, neutral color palette dominated by a beige/taupe background and deep black text and UI elements. The layout is spacious and balanced, employing a strict grid with generous negative space to create a calm and sophisticated atmosphere. Typography features large, high-contrast serif headings paired with delicate serif body text, reinforcing a classic and timeless feel. The interface uses minimalistic buttons with thin borders and monochrome icons, emphasizing clarity and understated luxury. The overall visual personality is professional, warm, and inviting, suitable for premium service brands that value tradition and modernity.",
+        "toneOfVoice": "Sophisticated, calm, professional, refined, and trustworthy with a warm and inviting personality.",
+        "tones": [
+          "calm",
+          "sophisticated",
+          "minimal",
+          "warm",
+          "professional",
+          "refined",
+          "luxurious",
+          "inviting",
+          "classic",
+          "elegant"
+        ],
+        "designStyle": {
+          "primaryStyle": [
+            "Minimalism",
+            "Editorial"
+          ],
+          "supportingStyles": [
+            "Classic Elegance",
+            "Modern Luxury"
+          ]
+        },
+        "palette": {
+          "colors": {
+            "primary": "#000000",
+            "primaryForeground": "#FFFFFF",
+            "secondary": "#1A1A1A",
+            "secondaryForeground": "#FFFFFF",
+            "background": "#B7AEA3",
+            "customColors": [
+              {
+                "name": "buttonbackground",
+                "value": "#D9D2C9"
+              },
+              {
+                "name": "buttonborder",
+                "value": "#000000"
+              },
+              {
+                "name": "destructive",
+                "value": "#DF3131"
+              },
+              {
+                "name": "destructiveforeground",
+                "value": "#FFFFFF"
+              }
+            ]
+          },
+          "paletteUsageGuide": "Use the 'background' color as the primary canvas for most pages to create a warm and neutral environment. The 'primary' color is reserved for main text and key UI elements, ensuring strong readability and contrast. The 'secondary' color is used for dark backgrounds, such as booking sections, with 'secondaryForeground' for text to maintain accessibility. Buttons should use 'buttonBackground' for subtle fill with 'buttonBorder' for outlines, maintaining the minimalistic and elegant style. Avoid bright or saturated colors to preserve the sophisticated tone. Combine 'primary' and 'background' for text and backgrounds respectively to ensure clarity, and use 'secondary' backgrounds for emphasis or section differentiation.",
+          "paletteAccessibilityNotes": "The 'primary' color on 'background' provides excellent contrast exceeding WCAG AA standards for text readability. The 'secondary' background with 'secondaryForeground' text also meets WCAG AA contrast ratios, ensuring accessibility in darker sections. Button text on 'buttonBackground' with 'buttonBorder' outlines maintains sufficient contrast for interactive elements. Overall, the palette supports strong accessibility compliance across all UI components."
+        },
+        "typography": {
+          "headings": {
+            "font": {
+              "role": "Primary Heading Font",
+              "fontFamily": "cormorantgaramond",
+              "fontJustification": ""
+            },
+            "headingsSimilarFonts": [
+              "bitter",
+              "cormorantgaramond",
+              "playfair display"
+            ],
+            "headingsUsageGuide": "Use the heading font for all primary titles and section headers to convey elegance and tradition. Pair with serif paragraph fonts for a cohesive look. Maintain ample spacing above and below headings to preserve clarity and hierarchy. Use 'primary' color for headings on light backgrounds and 'secondaryForeground' on dark backgrounds to ensure readability.",
+            "headingsAccessibilityNotes": "Headings in 'primary' color on 'background' meet WCAG AA contrast standards. On dark backgrounds, use 'secondaryForeground' for sufficient contrast."
+          },
+          "paragraphs": {
+            "font": {
+              "role": "Main Body Text Font",
+              "fontFamily": "futura-lt-w01-book",
+              "fontJustification": ""
+            },
+            "paragraphsSimilarFonts": [
+              "playfair display",
+              "cormorantgaramond",
+              "bitter"
+            ],
+            "paragraphsUsageGuide": "Use the paragraph font for all body text and descriptive content. Maintain comfortable line height and letter spacing for readability. Pair with heading fonts to create a harmonious typographic hierarchy. Use 'primary' color for text on light backgrounds and 'secondaryForeground' on dark backgrounds to ensure accessibility.",
+            "paragraphsAccessibilityNotes": "Body text in 'primary' color on 'background' meets WCAG AA contrast requirements. On dark backgrounds, use 'secondaryForeground' for sufficient contrast."
+          },
+          "welcomeSectionTypography": {
+            "placement": "Weighted Quadrant",
+            "implementation": "The large heading is anchored in the top-left quadrant, spanning horizontally with ample negative space around it. Supporting text and call-to-action button are placed below the heading on the left side, balanced by images on the right. This creates a visually weighted layout that draws attention to the brand message while maintaining harmony and spaciousness."
+          },
+          "fontSizes": [
+            {
+              "name": "xs",
+              "size": "0.75rem",
+              "lineHeight": "1.2",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "sm",
+              "size": "0.875rem",
+              "lineHeight": "1.3",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "base",
+              "size": "1rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.025em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "lg",
+              "size": "1.125rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.025em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "xl",
+              "size": "1.25rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.025em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "2xl",
+              "size": "1.5rem",
+              "lineHeight": "1.4",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            },
+            {
+              "name": "3xl",
+              "size": "1.875rem",
+              "lineHeight": "1.3",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            },
+            {
+              "name": "4xl",
+              "size": "2.25rem",
+              "lineHeight": "1.2",
+              "letterSpacing": "0.015em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "5xl",
+              "size": "3rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "0.01em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "6xl",
+              "size": "3.75rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "0em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "7xl",
+              "size": "4.5rem",
+              "lineHeight": "1",
+              "letterSpacing": "0em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "8xl",
+              "size": "6rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "9xl",
+              "size": "8rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ]
+        },
+        "layout": {
+          "layoutDna": {
+            "densitySpectrum": "Spacious",
+            "contrastSpectrum": "High-Contrast",
+            "gridAlignmentSpectrum": "Strict Grid",
+            "negativeSpaceUsage": "Generous",
+            "textVsImageEmphasis": "Balanced",
+            "complexitySpectrum": "Simple & Clean"
+          },
+          "grid": {
+            "compositionApproach": "Column-based",
+            "spacing": {
+              "columns": "12-column grid",
+              "rows": "Defined content rows",
+              "gaps": "Consistent medium gaps"
+            },
+            "margins": "Generous page margins",
+            "padding": "Consistent padding within containers"
+          }
+        },
+        "components": {
+          "containers": "Containers use subtle backgrounds or none, relying on layout and spacing for structure. They maintain generous padding and margins to preserve the spacious and clean aesthetic. Background colors alternate between 'background' and 'secondary' to differentiate sections.",
+          "images": "Images are high-quality, warm-toned, and natural, framed with generous spacing. They serve as visual anchors but their colors are not part of the brand palette. Images have no borders or shadows, maintaining a clean presentation.",
+          "buttons": "Buttons are minimalistic with thin 'buttonBorder' outlines and 'buttonBackground' fill on hover or active states. Text uses 'primary' or 'secondaryForeground' depending on background. Buttons have generous padding and subtle rounded corners, consistent with the elegant style."
+        },
+        "graphicElements": {
+          "icons": "Icons are simple, monochrome line style using 'primary' or 'secondaryForeground' colors. They are minimal and unobtrusive, supporting navigation and user interaction without distraction.",
+          "illustrations": "No illustrations are present; the design relies on photography and typography for visual interest.",
+          "stickers": "No stickers or badges are used, maintaining a clean and sophisticated look."
+        }
+      },
+      "originImagesUrls": [
+        "https://wixmp-fe53c9ff592a4da924211f23.wixmp.com/uploads/1759225951028-Screenshot%202025-09-30%20at%2012.52.25.png"
+      ]
+    },
+    {
+      "presetId": "9fcae758-95a7-4545-9fbd-b80749c06532",
+      "brandIdentity": {
+        "designSummary": "This design features a minimalistic and refined aesthetic with a spacious, balanced layout. The color palette is dominated by a soft, warm off-white background paired with black and dark gray text for high contrast and readability. Typography plays a central role, combining large, bold, geometric sans-serif headings with delicate italic serif body text to create a sophisticated editorial tone. The layout uses generous white space and a modular grid with consistent margins and subtle rounded corners on images and cards, adding a modern yet approachable softness. UI elements are understated with thin borders and minimal fills, emphasizing clarity and elegance. Overall, the design conveys a timeless, high-end brand identity suitable for luxury products, focusing on simplicity, clarity, and subtle sophistication.",
+        "toneOfVoice": "Sophisticated, minimalistic, elegant, and modern with a calm and refined personality.",
+        "tones": [
+          "calm",
+          "sophisticated",
+          "minimal",
+          "elegant",
+          "modern",
+          "refined",
+          "timeless",
+          "clean",
+          "balanced",
+          "understated"
+        ],
+        "designStyle": {
+          "primaryStyle": [
+            "Minimalism",
+            "Modern"
+          ],
+          "supportingStyles": [
+            "Editorial",
+            "Luxury"
+          ]
+        },
+        "palette": {
+          "colors": {
+            "primary": "#000000",
+            "primaryForeground": "#F7F5F0",
+            "secondary": "#4A4A4A",
+            "secondaryForeground": "#F7F5F0",
+            "background": "#F7F5F0",
+            "customColors": [
+              {
+                "name": "subtleborder",
+                "value": "#D1CDC7"
+              },
+              {
+                "name": "mutedgray",
+                "value": "#B0B0B0"
+              },
+              {
+                "name": "foreground",
+                "value": "#4A4A4A"
+              },
+              {
+                "name": "destructive",
+                "value": "#DF3131"
+              },
+              {
+                "name": "destructiveforeground",
+                "value": "#FFFFFF"
+              }
+            ]
+          },
+          "paletteUsageGuide": "Use the 'background' color as the primary canvas to create a soft, warm environment that supports content without distraction. The 'primary' color is reserved for main text and headings to ensure maximum readability and strong visual hierarchy. The 'secondary' color is used for less prominent text and UI elements, providing subtle contrast without overpowering the primary text. The 'subtleBorder' color is ideal for delicate dividing lines and borders around interactive elements, maintaining the minimal aesthetic. The 'mutedGray' color can be used for secondary UI elements or placeholder text to add depth without breaking the calm tone. All colors should be combined to maintain high contrast and accessibility, with 'primary' text on 'background' for main content and 'secondary' for supporting text. Avoid using heavy fills or saturated colors to preserve the understated luxury feel.",
+          "paletteAccessibilityNotes": "The 'primary' color on 'background' provides excellent contrast exceeding WCAG AA standards for all text sizes. The 'secondary' color on 'background' also meets WCAG AA contrast requirements for body text and UI elements. Borders and subtle UI accents using 'subtleBorder' and 'mutedGray' maintain sufficient contrast for visibility without overwhelming the design. Overall, the palette supports accessible reading and interaction while preserving the minimal and elegant aesthetic."
+        },
+        "typography": {
+          "headings": {
+            "font": {
+              "role": "Primary Heading Font",
+              "fontFamily": "avenir-lt-w01_85-heavy1475544",
+              "fontJustification": ""
+            },
+            "headingsSimilarFonts": [
+              "futura-lt-w01-book",
+              "montserrat",
+              "oswald"
+            ],
+            "headingsUsageGuide": "Use the heading font in large sizes with tight letter spacing to create strong visual impact and hierarchy. Headings should be uppercase or all caps for a clean, modern look. Pair headings with the serif paragraph font to create contrast and balance. Maintain generous spacing around headings to preserve the minimal aesthetic. Use the 'primary' color for headings to ensure maximum readability and emphasis.",
+            "headingsAccessibilityNotes": "Headings in 'primary' color on 'background' provide excellent contrast and meet WCAG AA standards for all sizes, ensuring clear readability and accessibility."
+          },
+          "paragraphs": {
+            "font": {
+              "role": "Main Body Text Font",
+              "fontFamily": "baskervillemtw01-smbdit",
+              "fontJustification": ""
+            },
+            "paragraphsSimilarFonts": [
+              "playfair display",
+              "didot-w01-italic",
+              "cormorantgaramond-light"
+            ],
+            "paragraphsUsageGuide": "Use the paragraph font in smaller sizes with italic styling to add a refined, editorial tone. This font contrasts with the bold sans-serif headings, creating a balanced typographic hierarchy. Use the 'secondary' color for body text and captions to soften the visual weight while maintaining readability. Maintain ample line height and spacing to enhance legibility and preserve the airy feel of the layout.",
+            "paragraphsAccessibilityNotes": "Paragraph text in 'secondary' color on 'background' meets WCAG AA contrast requirements for body text, ensuring accessible reading while supporting the elegant design."
+          },
+          "welcomeSectionTypography": {
+            "placement": "Weighted Quadrant",
+            "implementation": "The welcome section uses a two-column layout with large, bold headings occupying the left quadrant and a product image with rounded corners on the right quadrant. This placement balances visual weight between text and imagery, creating a harmonious and inviting introduction. The heading's large size and tight letter spacing draw immediate attention, while the image's soft edges and neutral background complement the typography. The generous white space around both elements enhances clarity and focus, reinforcing the minimal and elegant brand identity."
+          },
+          "fontSizes": [
+            {
+              "name": "xs",
+              "size": "0.75rem",
+              "lineHeight": "1.2",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "sm",
+              "size": "0.875rem",
+              "lineHeight": "1.3",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "base",
+              "size": "1rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "lg",
+              "size": "1.125rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            },
+            {
+              "name": "xl",
+              "size": "1.5rem",
+              "lineHeight": "1.4",
+              "letterSpacing": "0em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "2xl",
+              "size": "2rem",
+              "lineHeight": "1.3",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "3xl",
+              "size": "2.5rem",
+              "lineHeight": "1.2",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "800"
+            },
+            {
+              "name": "4xl",
+              "size": "3rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "800"
+            },
+            {
+              "name": "5xl",
+              "size": "3.75rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.04em",
+              "fontWeight": "900"
+            },
+            {
+              "name": "6xl",
+              "size": "4.5rem",
+              "lineHeight": "1.05",
+              "letterSpacing": "-0.05em",
+              "fontWeight": "900"
+            },
+            {
+              "name": "7xl",
+              "size": "5.5rem",
+              "lineHeight": "1.05",
+              "letterSpacing": "-0.06em",
+              "fontWeight": "900"
+            },
+            {
+              "name": "8xl",
+              "size": "6.5rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.07em",
+              "fontWeight": "900"
+            },
+            {
+              "name": "9xl",
+              "size": "8rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.08em",
+              "fontWeight": "900"
+            }
+          ]
+        },
+        "layout": {
+          "layoutDna": {
+            "densitySpectrum": "Spacious",
+            "contrastSpectrum": "High-Contrast",
+            "gridAlignmentSpectrum": "Strict Grid",
+            "negativeSpaceUsage": "Generous",
+            "textVsImageEmphasis": "Balanced",
+            "complexitySpectrum": "Simple & Clean"
+          },
+          "grid": {
+            "compositionApproach": "Modular",
+            "spacing": {
+              "columns": "12-column grid",
+              "rows": "Defined content rows",
+              "gaps": "Consistent medium gaps"
+            },
+            "margins": "Generous page margins",
+            "padding": "Consistent padding within containers"
+          }
+        },
+        "components": {
+          "containers": "Containers use generous padding and subtle borders in 'subtleBorder' color to define sections without heavy visual weight. Rounded corners soften container edges, maintaining the minimal and approachable feel. Backgrounds remain in 'background' color to preserve consistency.",
+          "images": "Product images are presented with muted, neutral backgrounds in 'mutedGray' or similar tones, with rounded corners to soften the geometric layout. Images are large and clear, emphasizing product form and material without distraction.",
+          "buttons": "Buttons are minimal with thin borders in 'primary' color and transparent backgrounds. Text inside buttons uses 'primary' color for clarity. On hover, buttons may invert colors or slightly darken the border to indicate interactivity while maintaining subtlety."
+        },
+        "graphicElements": {
+          "icons": "Icons are line-based, minimal, and use the 'primary' color to maintain consistency with text and UI elements. They are simple and unobtrusive, supporting navigation and interaction without drawing excessive attention.",
+          "illustrations": "No illustrations are used, keeping the focus on product photography and typography to maintain a clean and sophisticated look.",
+          "stickers": "Stickers or badges, such as sale indicators, use subtle outlines in 'primary' color with italic serif text to blend with the editorial tone without disrupting the minimal aesthetic."
+        }
+      },
+      "originImagesUrls": [
+        "https://wixmp-fe53c9ff592a4da924211f23.wixmp.com/uploads/1750580630382-Screenshot%202025-06-22%20at%2011.23.45.png"
+      ]
+    },
+    {
+      "presetId": "cd5185fd-2b89-41fa-b04e-4b34c80fc9f5",
+      "brandIdentity": {
+        "designSummary": "This website design features a refined and minimal aesthetic with a vintage artisanal touch. The overall style is clean and spacious, using a very light cream background that creates a warm and inviting atmosphere. Typography plays a central role, combining a classic serif font for headings and product titles with a monospace, typewriter-style font for body text, evoking authenticity and craftsmanship. The layout is grid-based and balanced, with generous white space that highlights product imagery and content blocks. Color usage is subtle and restrained, focusing on natural, muted tones such as soft blues and muted olive greens in content sections, contrasted with dark gray text for readability. UI elements like buttons are minimal and outlined with rounded corners, maintaining the delicate and understated feel. The design avoids heavy graphic elements, instead emphasizing clean lines, subtle borders, and natural product photography. This visual language conveys a calm, trustworthy, and sophisticated brand identity suitable for natural health, wellness, or boutique lifestyle brands.",
+        "toneOfVoice": "Calm, trustworthy, refined, authentic, and approachable with a subtle vintage artisanal character.",
+        "tones": [
+          "calm",
+          "trustworthy",
+          "refined",
+          "authentic",
+          "minimal",
+          "warm",
+          "sophisticated",
+          "natural",
+          "inviting",
+          "balanced"
+        ],
+        "designStyle": {
+          "primaryStyle": [
+            "Minimalism",
+            "Vintage Artisanal"
+          ],
+          "supportingStyles": [
+            "Natural",
+            "Classic",
+            "Clean"
+          ]
+        },
+        "palette": {
+          "colors": {
+            "primary": "#2B2B2B",
+            "primaryForeground": "#FFF9E9",
+            "secondary": "#B9B89A",
+            "secondaryForeground": "#2B2B2B",
+            "background": "#FFF9E9",
+            "customColors": [
+              {
+                "name": "softblue",
+                "value": "#D6D9FF"
+              },
+              {
+                "name": "foreground",
+                "value": "#2B2B2B"
+              },
+              {
+                "name": "destructive",
+                "value": "#DF3131"
+              },
+              {
+                "name": "destructiveforeground",
+                "value": "#FFFFFF"
+              }
+            ]
+          },
+          "paletteUsageGuide": "Use the 'background' color as the primary canvas for all pages, providing a warm and inviting base. The 'primary' color is best suited for main text, headings, and key UI elements to ensure strong readability and contrast. The 'secondary' color can be used for accent blocks, subtle backgrounds, or secondary content areas to add natural warmth and depth. The 'softBlue' custom color is ideal for highlighting informational sections or subtle emphasis areas, creating a gentle contrast with the 'background'. Buttons and interactive elements should primarily use the 'primary' color for text and borders, maintaining clarity and accessibility. Combining 'primary' text on 'background' or 'softBlue' backgrounds ensures good contrast, while 'secondary' backgrounds with 'primary' text provide a natural, earthy feel. Avoid using heavy or saturated colors to maintain the calm and refined atmosphere. Overall, colors should be used sparingly and harmoniously to support the minimal and authentic brand tone.",
+          "paletteAccessibilityNotes": "The 'primary' color on the 'background' color meets WCAG AA standards for normal text, ensuring readability and accessibility. The 'primary' color on 'softBlue' and 'secondary' backgrounds also meets WCAG AA contrast ratios for text and UI elements. Buttons using 'primary' text and borders on 'background' maintain sufficient contrast for accessibility. The palette avoids low-contrast combinations, supporting clear legibility across all text and interactive components."
+        },
+        "typography": {
+          "headings": {
+            "font": {
+              "role": "Primary Heading Font",
+              "fontFamily": "baskervillemtw01-smbdit",
+              "fontJustification": ""
+            },
+            "headingsSimilarFonts": [
+              "playfair display",
+              "cormorantgaramond",
+              "didot-w01-italic"
+            ],
+            "headingsUsageGuide": "Use the heading font for all major titles, product names, and section headers to establish a refined and classic tone. Pair with the monospace paragraph font to create a distinctive contrast between headings and body text. Maintain generous spacing around headings to enhance readability and visual hierarchy. Use the 'primary' color for headings to ensure strong contrast against the 'background'. Avoid overly large sizes that disrupt the minimal balance.",
+            "headingsAccessibilityNotes": "Headings in the 'primary' color on the 'background' color meet WCAG AA contrast requirements, ensuring clear legibility for all users."
+          },
+          "paragraphs": {
+            "font": {
+              "role": "Main Body Text Font",
+              "fontFamily": "azeret-mono",
+              "fontJustification": ""
+            },
+            "paragraphsSimilarFonts": [
+              "roboto-thin",
+              "open sans",
+              "courier new"
+            ],
+            "paragraphsUsageGuide": "Use the paragraph font for all body text, descriptions, and detailed content to convey an artisanal and authentic feel. The monospace style contrasts with the serif headings, enhancing the vintage character. Text should be set in the 'primary' color on the 'background' or 'softBlue' backgrounds for readability. Maintain consistent line height and letter spacing to avoid visual clutter. Avoid using this font for large headings or buttons to preserve hierarchy.",
+            "paragraphsAccessibilityNotes": "Paragraph text in the 'primary' color on the 'background' color meets WCAG AA standards for normal text, ensuring accessibility."
+          },
+          "welcomeSectionTypography": {
+            "placement": "Top-Third Anchor",
+            "implementation": "The welcome section typography is anchored in the top third of the viewport, creating an immediate focal point upon page load. The large serif heading is prominently placed with generous spacing above and below, establishing a refined and elegant introduction. Supporting text uses the monospace font beneath the heading with ample line height and letter spacing to maintain clarity and balance. This placement leverages white space effectively, allowing the typography to breathe and set the tone for the rest of the site."
+          },
+          "fontSizes": [
+            {
+              "name": "xs",
+              "size": "0.75rem",
+              "lineHeight": "1.2",
+              "letterSpacing": "0.05em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "sm",
+              "size": "0.875rem",
+              "lineHeight": "1.3",
+              "letterSpacing": "0.04em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "base",
+              "size": "1rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.03em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "lg",
+              "size": "1.125rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.02em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "xl",
+              "size": "1.25rem",
+              "lineHeight": "1.5",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            },
+            {
+              "name": "2xl",
+              "size": "1.5rem",
+              "lineHeight": "1.4",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            },
+            {
+              "name": "3xl",
+              "size": "1.875rem",
+              "lineHeight": "1.3",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            },
+            {
+              "name": "4xl",
+              "size": "2.25rem",
+              "lineHeight": "1.2",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "5xl",
+              "size": "3rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "6xl",
+              "size": "3.75rem",
+              "lineHeight": "1.1",
+              "letterSpacing": "-0.04em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "7xl",
+              "size": "4.5rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.05em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "8xl",
+              "size": "6rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.06em",
+              "fontWeight": "700"
+            },
+            {
+              "name": "9xl",
+              "size": "8rem",
+              "lineHeight": "1",
+              "letterSpacing": "-0.07em",
+              "fontWeight": "700"
+            }
+          ]
+        },
+        "layout": {
+          "layoutDna": {
+            "densitySpectrum": "Balanced",
+            "contrastSpectrum": "Subtle",
+            "gridAlignmentSpectrum": "Strict Grid",
+            "negativeSpaceUsage": "Generous",
+            "textVsImageEmphasis": "Balanced",
+            "complexitySpectrum": "Simple & Clean"
+          },
+          "grid": {
+            "compositionApproach": "Column-based",
+            "spacing": {
+              "columns": "12-column grid",
+              "rows": "Defined content rows",
+              "gaps": "Consistent medium gaps"
+            },
+            "margins": "Generous page margins",
+            "padding": "Consistent padding within containers"
+          }
+        },
+        "components": {
+          "containers": "Containers use soft background colors such as 'softBlue' and 'secondary' to differentiate content sections. They have subtle borders and consistent padding to maintain a clean and organized layout. The 'background' color is used for the main page canvas, ensuring content stands out clearly.",
+          "images": "Product images are presented in a clean, uniform grid with no heavy framing or shadows, emphasizing natural lighting and product details. Images have generous spacing around them to avoid clutter and maintain focus.",
+          "buttons": "Buttons are minimal and outlined with the 'primary' color as the border and text. They have rounded corners and a subtle hover effect implied by the design style. The 'background' color is used behind buttons to maintain contrast and clarity."
+        },
+        "graphicElements": {
+          "icons": "Icons are minimal or absent, maintaining the clean and understated aesthetic. If used, they would likely be simple line icons in the 'primary' color to complement the typography and layout.",
+          "illustrations": "No illustrations are present, reinforcing the focus on product photography and natural textures.",
+          "stickers": "Badges such as 'SALE' and 'NEW' are small, rounded rectangles with a light background and 'primary' color text, maintaining subtle emphasis without overpowering the design."
+        }
+      },
+      "originImagesUrls": [
+        "https://wixmp-fe53c9ff592a4da924211f23.wixmp.com/uploads/1752411805018-Screenshot%202025-07-13%20at%2016.01.59%201.jpg"
+      ]
+    }
+  ],
+  "brandBook": {
+    "tones": [
+      "Mysterious",
+      "Exclusive",
+      "Urgent",
+      "Elegant"
+    ],
+    "designStyle": {
+      "primaryStyle": [
+        "Dark Minimalism",
+        "Elegant"
+      ],
+      "supportingStyles": [
+        "Modern",
+        "Functional"
+      ]
+    },
+    "toneOfVoice": "Mysterious, exclusive, urgent, and elegant.",
+    "components": {
+      "images": "Layout Role: Full-bleed background with a fixed position to create a window effect on scroll. | Gallery Type: Interactive Slideshow: A full-viewport carousel with cinematic cross-fade transitions.",
+      "buttons": "Primary: background-color: #8B0000, color: #FFFFFF, border-radius: 8px, padding: 12px 24px. Secondary: background-color: transparent, color: #FFFFFF, border: 1px solid #FFFFFF, border-radius: 8px.",
+      "containers": "Method: Whitespace, Style: 40px vertical margin"
+    },
+    "typography": {
+      "headings": {
+        "font": {
+          "role": "Headings",
+          "fontFamily": "cormorantgaramond",
+          "fontJustification": ""
+        },
+        "headingsUsageGuide": "Use Cormorant Garamond for the main title ('1 Minuto') and the countdown timer. This font conveys elegance and seriousness.",
+        "headingsSimilarFonts": [],
+        "headingsAccessibilityNotes": "Ensure sufficient contrast between the heading text and the background color."
+      },
+      "fontSizes": [
+        {
+          "name": "xs",
+          "size": "0.75rem",
+          "letterSpacing": "0.05em",
+          "lineHeight": "1",
+          "fontWeight": "300"
+        },
+        {
+          "name": "sm",
+          "size": "0.875rem",
+          "letterSpacing": "0.025em",
+          "lineHeight": "1.25",
+          "fontWeight": "300"
+        },
+        {
+          "name": "base",
+          "size": "1rem",
+          "letterSpacing": "0.01em",
+          "lineHeight": "1.5",
+          "fontWeight": "300"
+        },
+        {
+          "name": "lg",
+          "size": "1.125rem",
+          "letterSpacing": "0.01em",
+          "lineHeight": "1.75",
+          "fontWeight": "300"
+        },
+        {
+          "name": "xl",
+          "size": "1.25rem",
+          "letterSpacing": "0.01em",
+          "lineHeight": "1.75",
+          "fontWeight": "300"
+        },
+        {
+          "name": "2xl",
+          "size": "1.5rem",
+          "letterSpacing": "0.01em",
+          "lineHeight": "2",
+          "fontWeight": "400"
+        },
+        {
+          "name": "3xl",
+          "size": "1.875rem",
+          "letterSpacing": "0.01em",
+          "lineHeight": "2.25",
+          "fontWeight": "400"
+        },
+        {
+          "name": "4xl",
+          "size": "2.25rem",
+          "letterSpacing": "-0.01em",
+          "lineHeight": "2.5",
+          "fontWeight": "400"
+        },
+        {
+          "name": "5xl",
+          "size": "3rem",
+          "letterSpacing": "-0.02em",
+          "lineHeight": "1",
+          "fontWeight": "700"
+        },
+        {
+          "name": "6xl",
+          "size": "3.75rem",
+          "letterSpacing": "-0.02em",
+          "lineHeight": "1",
+          "fontWeight": "700"
+        },
+        {
+          "name": "7xl",
+          "size": "4.5rem",
+          "letterSpacing": "-0.02em",
+          "lineHeight": "1",
+          "fontWeight": "700"
+        },
+        {
+          "name": "8xl",
+          "size": "6rem",
+          "letterSpacing": "-0.02em",
+          "lineHeight": "1",
+          "fontWeight": "700"
+        },
+        {
+          "name": "9xl",
+          "size": "8rem",
+          "letterSpacing": "-0.02em",
+          "lineHeight": "1",
+          "fontWeight": "700"
+        }
+      ],
+      "paragraphs": {
+        "font": {
+          "role": "Paragraphs",
+          "fontFamily": "sora-light",
+          "fontJustification": ""
+        },
+        "paragraphsUsageGuide": "Use Sora Light for all supporting text, such as the description ('Esto se muestra solo durante un minuto. Todo el mundo lo ve.') and legal disclaimers. This font is clean and legible.",
+        "paragraphsSimilarFonts": [],
+        "paragraphsAccessibilityNotes": "Ensure sufficient contrast between the paragraph text and the background color."
+      },
+      "welcomeSectionTypography": {
+        "placement": "",
+        "implementation": ""
+      }
+    },
+    "originImagesUrls": [],
+    "layout": {
+      "grid": {
+        "margins": "Base unit: 8px. All margins are multiples of 8px (e.g., 16px, 24px, 32px).",
+        "padding": "Base unit: 8px. All padding is multiples of 8px (e.g., 16px, 24px, 32px).",
+        "spacing": {
+          "gaps": "Base unit: 8px. All grid gaps are multiples of 8px (e.g., 16px, 24px, 32px).",
+          "rows": "Auto",
+          "columns": "12"
+        },
+        "compositionApproach": "Symmetrical Layout with Centralized Content"
+      },
+      "layoutDna": {
+        "contrastSpectrum": "High Contrast",
+        "densitySpectrum": "Sparse",
+        "textVsImageEmphasis": "Image Emphasis",
+        "complexitySpectrum": "Simple",
+        "gridAlignmentSpectrum": "Symmetrical",
+        "negativeSpaceUsage": "Generous"
+      },
+      "heroSectionLayout": "**The Ephemeral Spotlight**\nComposition (Tailwind Spec): Full-screen container (h-screen grid place-items-center). Centralized content area (max-w-4xl w-full p-8). Countdown timer (text-7xl font-bold text-red-600 mb-4). Main content area for image/video (aspect-video w-full rounded-2xl overflow-hidden).\nSignature Hook (Framer Motion Spec): The countdown timer uses Framer Motion's `useTransform` and `useTime` to create a smooth, visually engaging animation. The timer text scales from `1.2` to `1` as the time approaches zero, creating a subtle pulse effect."
+    },
+    "graphicElements": {
+      "icons": "",
+      "stickers": "",
+      "illustrations": ""
+    },
+    "designSummary": "**Ephemeral Elegance: A Dark Minimalist Stage**\n\nThe Vision: To create a digital space that feels exclusive, mysterious, and fleeting, like a secret performance only visible for a minute. The design emphasizes the temporary nature of the content, creating a sense of urgency and curiosity. The core concept is a minimalist stage where user-generated content takes center stage, framed by darkness and subtle elegance.\n\n**Execution Blueprint:**\n1. The Void as a Frame: The background is a deep charcoal (#121212), providing maximum contrast and a sense of depth. All elements float within this void.\n2. Typographic Hierarchy: Use 'Cormorant Garamond' for headlines (the '1 Minuto' title, the countdown timer) to convey sophistication. Use 'Sora Light' for all supporting text to ensure readability without disrupting the minimalist aesthetic.\n3. The 8px Rhythm: All spacing (margins, padding, gaps) must adhere to an 8px base unit to maintain visual harmony and a sense of order.\n4. The Crimson Accent: A single accent color, #8B0000 (dark red), is used sparingly for the main call-to-action button ('Comprar 1 Minuto') and the countdown timer to draw the eye and create a sense of tension.",
+    "palette": {
+      "colors": {
+        "background": "#121212",
+        "secondary": "#FFFFFF",
+        "customColors": [
+          {
+            "name": "softWhite",
+            "value": "#F0F0F0"
+          },
+          {
+            "name": "destructive",
+            "value": "#FF4500"
+          },
+          {
+            "name": "destructive-foreground",
+            "value": "#FFFFFF"
+          }
+        ],
+        "foreground": "#FFFFFF",
+        "secondaryForeground": "#121212",
+        "primaryForeground": "#FFFFFF",
+        "primary": "#8B0000"
+      },
+      "paletteUsageGuide": "Use the dark background to create a sense of mystery and exclusivity. Use the soft white for text to ensure readability. Use the dark red accent color sparingly to draw attention to key elements.",
+      "paletteAccessibilityNotes": "Ensure sufficient contrast between text and background colors for readability. Use a color contrast checker to verify WCAG AA compliance."
+    }
+  },
+  "initialPrompt": "Crea una página web oscura, minimalista y misteriosa llamada “1 Minuto”. El concepto es una pantalla global compartida donde los usuarios pueden pagar 3 dólares para mostrar una imagen o un video durante exactamente 60 segundos, visible para todos los visitantes del sitio. El sitio está dirigido exclusivamente a mayores de 18 años, con advertencias claras y visibles. No se permite ningún contenido relacionado con menores bajo ninguna circunstancia. Estilo visual: paleta de colores oscura y elegante, fondo negro carbón o gris muy oscuro, texto en blanco suave, un solo color de acento (rojo oscuro o violeta profundo), sensación de misterio, exclusividad y tensión, diseño minimalista con mucho espacio vacío. Tipografía: títulos con una tipografía elegante y seria (serif moderna), texto secundario limpio y legible. Estructura: Home con contador grande y visible mostrando el tiempo restante del contenido actual (60 segundos), área central para mostrar imagen o video, texto corto tipo: “Esto se muestra solo durante un minuto. Todo el mundo lo ve.”, botón principal destacado: “Comprar 1 minuto – $3”. Flujo de pago: integrar pagos con tarjeta de crédito/débito y PayPal, pago único y no reembolsable. Después del pago: formulario para subir imagen o video, checkbox obligatorio de confirmación de mayoría de edad y de que el contenido no involucra menores, campo de email, aviso de revisión de contenido antes de mostrarse. Sección legal/advertencias: aviso +18 visible, política de cero tolerancia con contenido ilegal, el usuario asume responsabilidad total del contenido subido. Sensación general: curiosidad y morbo, no explicar todo explícitamente, sensación de exclusividad y temporalidad. Diseño moderno, oscuro, elegante y funcional, optimizado para desktop y móvil.",
+  "status": "READY",
+  "revision": "11",
+  "createdDate": "2025-12-28T01:38:43.419Z",
+  "updatedDate": "2025-12-28T01:39:14.140Z",
+  "attachments": {
+    "contentImagesUrls": [],
+    "inspirationImagesUrls": []
+  },
+  "selectedBrandingPresetId": "00000000-2ca4-4f2c-9545-226a75e7c2b5",
+  "plan": "{\n  \"sections\": [\n    {\n      \"id\": \"overview\",\n      \"title\": \"## Overview\",\n      \"content\": \"Este plan crea un sitio web minimalista y oscuro llamado \\\"1 Minuto\\\". Los usuarios pueden pagar $3 para mostrar una imagen o video durante 60 segundos, visible para todos los visitantes. El sitio está dirigido exclusivamente a mayores de 18 años, con advertencias claras y visibles.\"\n    },\n    {\n      \"id\": \"key-features\",\n      \"title\": \"## Key features\",\n      \"content\": \"- **Comprar 1 Minuto**: Permite a los usuarios pagar $3 para mostrar contenido durante 60 segundos.\\n- **Mostrar Contenido Global**: Exhibe la imagen o video actual para todos los visitantes del sitio.\\n- **Subir Contenido**: Permite a los usuarios subir una imagen o video después de la compra.\\n- **Confirmar Mayoría de Edad y Contenido**: Requiere que los usuarios confirmen ser mayores de 18 años y que su contenido no involucra menores.\\n- **Proporcionar Email**: Campo para que el usuario ingrese su correo electrónico.\\n- **Revisión de Contenido**: Aviso de que el contenido será revisado antes de mostrarse.\\n- **Mostrar Aviso Legal y Advertencias**: Muestra avisos claros de +18, política de cero tolerancia a contenido ilegal y asunción de responsabilidad por parte del usuario.\",\n      \"metadata\": [\n        { \"id\": \"buy-1-minute\", \"name\": \"Comprar 1 Minuto\" },\n        { \"id\": \"display-global-content\", \"name\": \"Mostrar Contenido Global\" },\n        { \"id\": \"upload-content\", \"name\": \"Subir Contenido\" },\n        { \"id\": \"confirm-age-and-content\", \"name\": \"Confirmar Mayoría de Edad y Contenido\" },\n        { \"id\": \"provide-email\", \"name\": \"Proporcionar Email\" },\n        { \"id\": \"content-review-notice\", \"name\": \"Revisión de Contenido\" },\n        { \"id\": \"display-legal-warnings\", \"name\": \"Mostrar Aviso Legal y Advertencias\" }\n      ]\n    },\n    {\n      \"id\": \"structure\",\n      \"title\": \"## Structure\",\n      \"content\": \"- **Header (Reusable)**: Contiene el nombre del sitio \\\"1 Minuto\\\" y un aviso visible de +18.\\n- **Footer (Reusable)**: Contiene enlaces a la política de privacidad y términos de servicio.\\n- **Homepage**: Muestra el contador de tiempo restante, el área central para la imagen/video actual, el texto explicativo corto y el botón principal \\\"Comprar 1 minuto – $3\\\".\"\n    }\n  ],\n  \"apps\": [\n    {\n      \"id\": \"wix-cms\",\n      \"keyFeatures\": [\n        { \"id\": \"buy-1-minute\", \"name\": \"Comprar 1 Minuto\" },\n        { \"id\": \"display-global-content\", \"name\": \"Mostrar Contenido Global\" },\n        { \"id\": \"upload-content\", \"name\": \"Subir Contenido\" },\n        { \"id\": \"confirm-age-and-content\", \"name\": \"Confirmar Mayoría de Edad y Contenido\" },\n        { \"id\": \"provide-email\", \"name\": \"Proporcionar Email\" },\n        { \"id\": \"content-review-notice\", \"name\": \"Revisión de Contenido\" },\n        { \"id\": \"display-legal-warnings\", \"name\": \"Mostrar Aviso Legal y Advertencias\" }\n      ]\n    }\n  ],\n  \"version\": \"3.0\"\n}",
+  "designerData": {
+    "designerId": "45d286a9-c2d3-4558-807d-a3f26205dc86",
+    "designerName": "Elise",
+    "selectionMethod": "UNSELECTED"
+  }
+}
