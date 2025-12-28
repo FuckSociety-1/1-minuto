@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-[120rem] mx-auto px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="font-paragraph text-sm text-soft-white/60">
-            © 2025 WorldMinute. Todos los derechos reservados.
+            © 2025 1 Minuto. Todos los derechos reservados.
           </div>
           <div className="flex gap-8">
             <Link 

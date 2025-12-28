@@ -215,7 +215,8 @@ export default function HomePage() {
         </section>
 
         {/* --- MARQUEE SECTION --- */}
-        <div className="w-full bg-soft-white text-background py-4 overflow-hidden border-y border-primary">
+        {/* --- MANIFESTO SECTION --- */}
+        <div className="w-full bg-soft-white text-background py-4 overflow-hidden border-y border-primary mt-24">
           <motion.div 
             animate={{ x: ["0%", "-50%"] }}
             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
@@ -234,7 +235,6 @@ export default function HomePage() {
           </motion.div>
         </div>
 
-        {/* --- MANIFESTO SECTION --- */}
         <section className="py-32 px-6 md:px-12 max-w-[100rem] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
             <div className="sticky top-32">
@@ -289,7 +289,7 @@ export default function HomePage() {
         </section>
 
         {/* --- RECENT HISTORY (Data Driven) --- */}
-        <section className="mt-24 py-32 bg-soft-white/5 border-y border-soft-white/5">
+        <section className="py-32 bg-soft-white/5 border-y border-soft-white/5">
           <div className="max-w-[120rem] mx-auto px-6 md:px-12">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
               <div>
@@ -357,12 +357,33 @@ export default function HomePage() {
 
         {/* --- CTA & LEGAL --- */}
         <section className="py-32 px-6 md:px-12 max-w-[100rem] mx-auto relative">
-
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-primary" />
+          
           <div className="max-w-3xl mx-auto text-center space-y-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-paragraph uppercase tracking-widest">
+              <Zap size={14} />
+              <span>Espacio Limitado</span>
+            </div>
+            
+            <h2 className="font-heading text-6xl md:text-7xl text-soft-white">
+              ¿Qué mostrarás al mundo?
+            </h2>
+            
+            <p className="font-paragraph text-xl text-soft-white/60">
+              Solo cuesta $3. Solo dura 60 segundos. <br/>
+              Pero la impresión puede durar para siempre.
+            </p>
 
             <div className="pt-8">
-
+              <Button
+                onClick={() => navigate('/purchase')}
+                className="bg-primary hover:bg-primary/90 text-white font-paragraph text-xl px-16 py-10 rounded-none transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(139,0,0,0.5)]"
+              >
+                Comprar 1 Minuto
+                <ArrowRight className="ml-4 w-6 h-6" />
+              </Button>
             </div>
+
             {/* Legal Warning Box */}
             <div className="mt-24 p-8 border border-soft-white/10 bg-soft-white/5 backdrop-blur-sm text-left max-w-2xl mx-auto relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-1 h-full bg-primary/50 group-hover:bg-primary transition-colors" />
