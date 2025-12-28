@@ -181,10 +181,7 @@ export default function HomePage() {
                   onClick={() => navigate('/purchase')}
                   className="bg-primary hover:bg-primary/90 text-white font-paragraph text-lg px-10 py-8 rounded-none border-l-4 border-white/20 transition-all hover:border-white"
                 >{"Comprar - $3"}</Button>
-                <div className="flex items-center gap-4 text-soft-white/40 font-paragraph text-sm">
-                  <Eye className="w-5 h-5" />
-                  <span>Visto por todos los visitantes ahora</span>
-                </div>
+
               </div>
             </div>
 
@@ -243,10 +240,9 @@ export default function HomePage() {
                   </button>
                 </div>
               </div>
-              
               {/* Decorative Elements */}
               <div className="absolute -bottom-6 -left-6 w-24 h-24 border-l border-b border-primary/30" />
-              <div className="absolute -top-6 -right-6 w-24 h-24 border-r border-t border-primary/30" />
+
             </div>
           </div>
         </section>
