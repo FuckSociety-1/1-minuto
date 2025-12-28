@@ -124,7 +124,7 @@ export default function PurchasePage() {
               </div>
 
               {/* File Upload */}
-              <div className="space-y-2">
+              <div className="space-y-0">
                 <Label htmlFor="content" className="font-paragraph text-base text-soft-white">
                   Subir Imagen o Video
                 </Label>
@@ -133,7 +133,7 @@ export default function PurchasePage() {
                   type="file"
                   accept="image/*,video/*"
                   onChange={handleFileChange}
-                  className="bg-background border-soft-white/30 text-soft-white font-paragraph file:mr-4 file:py-2 file:px-2 file:rounded-lg file:border-0 file:bg-primary file:text-primary-foreground file:font-paragraph file:text-sm hover:file:bg-primary/60"
+                  className="bg-background border-soft-white/30 text-soft-white font-paragraph file:mr-4 file:py-2 file:px-2 file:rounded-lg file:border-0 file:bg-primary file:text-primary-foreground file:font-paragraph file:text-sm hover:file:bg-primary/90"
                 />
                 {contentFile && (
                   <p className="font-paragraph text-sm text-soft-white/60">
