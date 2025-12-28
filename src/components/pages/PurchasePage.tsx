@@ -124,7 +124,7 @@ export default function PurchasePage() {
               </div>
 
               {/* File Upload */}
-              <div className="space-y-2">
+              <div className="space-y-12">
                 <Label htmlFor="content" className="font-paragraph text-base text-soft-white">
                   Subir Imagen o Video
                 </Label>
