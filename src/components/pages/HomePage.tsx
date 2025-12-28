@@ -36,9 +36,7 @@ const ParallaxImage: React.FC<{ src: string; alt: string; className?: string }> 
 
   return (
     <div ref={ref} className={`overflow-hidden ${className}`}>
-      <motion.div style={{ y }} className="w-full h-[120%] -mt-[10%]">
-        <Image src={src} alt={alt} width={1200} className="w-full h-full object-cover" />
-      </motion.div>
+
     </div>
   );
 };
@@ -198,12 +196,7 @@ export default function HomePage() {
                 
                 {/* Stage UI Elements */}
                 <div className="absolute top-6 right-6 flex gap-2">
-                  <div className="px-3 py-1 bg-black/50 backdrop-blur-md border border-white/10 text-xs font-paragraph uppercase tracking-wider text-white/70">
-                    Live Feed
-                  </div>
-                  <div className="px-3 py-1 bg-primary/80 backdrop-blur-md text-xs font-paragraph uppercase tracking-wider text-white">
-                    Global
-                  </div>
+
                 </div>
               </div>
               
@@ -213,7 +206,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
         {/* --- MARQUEE SECTION --- */}
         {/* --- MANIFESTO SECTION --- */}
         <div className="w-full bg-soft-white text-background py-4 overflow-hidden border-y border-primary mt-24">
@@ -234,7 +226,6 @@ export default function HomePage() {
             ))}
           </motion.div>
         </div>
-
         <section className="py-32 px-6 md:px-12 max-w-[100rem] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
             <div className="sticky top-32">
@@ -287,7 +278,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
         {/* --- RECENT HISTORY (Data Driven) --- */}
         <section className="py-32 bg-soft-white/5 border-y border-soft-white/5">
           <div className="max-w-[120rem] mx-auto px-6 md:px-12">
@@ -340,68 +330,9 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
         {/* --- ATMOSPHERIC BREAK --- */}
-        <section className="h-[80vh] flex items-center justify-center relative overflow-hidden">
-          <ParallaxImage 
-            src="https://static.wixstatic.com/media/5ad9e7_09e73ccca17c425682dadf2590a0fefb~mv2.png?originWidth=1152&originHeight=960" 
-            alt="Atmosphere" 
-            className="absolute inset-0 w-full h-full opacity-40"
-          />
-          <div className="relative z-10 text-center max-w-4xl px-6">
-            <h2 className="font-heading text-5xl md:text-7xl lg:text-8xl text-soft-white leading-tight mix-blend-overlay">
-              "El tiempo es la única moneda <br/> que realmente posees."
-            </h2>
-          </div>
-        </section>
 
         {/* --- CTA & LEGAL --- */}
-        <section className="py-32 px-6 md:px-12 max-w-[100rem] mx-auto relative">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-primary" />
-          
-          <div className="max-w-3xl mx-auto text-center space-y-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-paragraph uppercase tracking-widest">
-              <Zap size={14} />
-              <span>Espacio Limitado</span>
-            </div>
-            
-            <h2 className="font-heading text-6xl md:text-7xl text-soft-white">
-              ¿Qué mostrarás al mundo?
-            </h2>
-            
-            <p className="font-paragraph text-xl text-soft-white/60">
-              Solo cuesta $3. Solo dura 60 segundos. <br/>
-              Pero la impresión puede durar para siempre.
-            </p>
-
-            <div className="pt-8">
-              <Button
-                onClick={() => navigate('/purchase')}
-                className="bg-primary hover:bg-primary/90 text-white font-paragraph text-xl px-16 py-10 rounded-none transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(139,0,0,0.5)]"
-              >
-                Comprar 1 Minuto
-                <ArrowRight className="ml-4 w-6 h-6" />
-              </Button>
-            </div>
-
-            {/* Legal Warning Box */}
-            <div className="mt-24 p-8 border border-soft-white/10 bg-soft-white/5 backdrop-blur-sm text-left max-w-2xl mx-auto relative overflow-hidden group">
-              <div className="absolute top-0 left-0 w-1 h-full bg-primary/50 group-hover:bg-primary transition-colors" />
-              <div className="flex items-start gap-4">
-                <ShieldAlert className="w-8 h-8 text-primary shrink-0 mt-1" />
-                <div className="space-y-4">
-                  <h3 className="font-heading text-2xl text-soft-white">Advertencia Legal Obligatoria</h3>
-                  <div className="font-paragraph text-sm text-soft-white/60 space-y-2 leading-relaxed">
-                    <p>• Al usar este servicio, confirmas que tienes más de 18 años.</p>
-                    <p>• Todo el contenido es revisado manualmente antes de su publicación.</p>
-                    <p>• Política de Cero Tolerancia: Cualquier contenido ilegal, violento o que involucre menores será reportado inmediatamente a las autoridades pertinentes.</p>
-                    <p>• El pago de $3 es una tarifa de servicio no reembolsable.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
       {/* Custom Styles for specific effects */}
