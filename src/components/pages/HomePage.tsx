@@ -216,6 +216,25 @@ export default function HomePage() {
 
         {/* --- MARQUEE SECTION --- */}
         {/* --- MANIFESTO SECTION --- */}
+        <div className="w-full bg-soft-white text-background py-4 overflow-hidden border-y border-primary mt-24">
+          <motion.div 
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+            className="flex whitespace-nowrap font-heading text-4xl md:text-5xl uppercase tracking-tighter items-center"
+          >
+            {Array(10).fill("").map((_, i) => (
+              <React.Fragment key={i}>
+                <span className="mx-8">1 Minuto</span>
+                <span className="mx-8 text-primary">●</span>
+                <span className="mx-8">Ephemeral</span>
+                <span className="mx-8 text-primary">●</span>
+                <span className="mx-8">Uncensored Art</span>
+                <span className="mx-8 text-primary">●</span>
+              </React.Fragment>
+            ))}
+          </motion.div>
+        </div>
+
         <section className="py-32 px-6 md:px-12 max-w-[100rem] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
             <div className="sticky top-32">
@@ -268,25 +287,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        <div className="w-full bg-soft-white text-background py-4 overflow-hidden border-y border-primary">
-          <motion.div 
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-            className="flex whitespace-nowrap font-heading text-4xl md:text-5xl uppercase tracking-tighter items-center"
-          >
-            {Array(10).fill("").map((_, i) => (
-              <React.Fragment key={i}>
-                <span className="mx-8">1 Minuto</span>
-                <span className="mx-8 text-primary">●</span>
-                <span className="mx-8">Ephemeral</span>
-                <span className="mx-8 text-primary">●</span>
-                <span className="mx-8">Uncensored Art</span>
-                <span className="mx-8 text-primary">●</span>
-              </React.Fragment>
-            ))}
-          </motion.div>
-        </div>
 
         {/* --- RECENT HISTORY (Data Driven) --- */}
         <section className="py-32 bg-soft-white/5 border-y border-soft-white/5">
