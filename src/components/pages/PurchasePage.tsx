@@ -118,7 +118,7 @@ export default function PurchasePage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="tu@email.com"
+                  placeholder="example@email.com"
                   className="bg-background border-soft-white/20 text-soft-white font-paragraph"
                 />
               </div>
