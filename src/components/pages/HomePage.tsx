@@ -216,9 +216,7 @@ export default function HomePage() {
                       animate={{ opacity: 1 }}
                       className="w-full h-full flex flex-col items-center justify-center text-center p-12"
                     >
-                      <div className="w-24 h-24 border border-soft-white/20 rounded-full flex items-center justify-center mb-6 animate-pulse">
-                        <div className="w-2 h-2 bg-soft-white rounded-full" />
-                      </div>
+
                       <h3 className="font-heading text-4xl text-soft-white/40 mb-2">El escenario está vacío</h3>
                       <p className="font-paragraph text-soft-white/30">Sé el primero en reclamar este minuto.</p>
                     </motion.div>
