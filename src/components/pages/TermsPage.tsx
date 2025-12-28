@@ -42,7 +42,7 @@ export default function TermsPage() {
                   <div className="space-y-6">
                     <section>
                       <h2 className="font-heading text-3xl text-soft-white mb-4">1. Aceptación de Términos</h2>
-                      <p>Al usar 1 Minuto, aceptas estos términos de servicio. Si no estás de acuerdo, no uses el servicio.</p>
+                      <p>Al usar WorldMinute, aceptas estos términos de servicio. Si no estás de acuerdo, no uses el servicio.</p>
                     </section>
 
                     <section>
