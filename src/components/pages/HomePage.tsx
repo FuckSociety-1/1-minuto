@@ -151,7 +151,7 @@ export default function HomePage() {
                 <Button
                   onClick={() => navigate('/purchase')}
                   className="bg-primary hover:bg-primary/90 text-white font-paragraph text-lg px-10 py-8 rounded-none border-l-4 border-white/20 transition-all hover:border-white"
-                >{"Comprar - $3"}</Button>
+                >{"Comprar -2$3"}</Button>
                 <div className="flex items-center gap-4 text-soft-white/40 font-paragraph text-sm">
                   <Eye className="w-5 h-5" />
                   <span>Visto por todos los visitantes ahora</span>
@@ -215,8 +215,7 @@ export default function HomePage() {
         </section>
 
         {/* --- MARQUEE SECTION --- */}
-        {/* --- MANIFESTO SECTION --- */}
-        <div className="w-full bg-soft-white text-background py-4 overflow-hidden border-y border-primary mt-24">
+        <div className="w-full bg-soft-white text-background py-4 overflow-hidden border-y border-primary">
           <motion.div 
             animate={{ x: ["0%", "-50%"] }}
             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
@@ -235,6 +234,7 @@ export default function HomePage() {
           </motion.div>
         </div>
 
+        {/* --- MANIFESTO SECTION --- */}
         <section className="py-32 px-6 md:px-12 max-w-[100rem] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
             <div className="sticky top-32">
