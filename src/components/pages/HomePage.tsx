@@ -186,7 +186,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Column: The Content Stage */}
-            <div className="lg:col-span-7 relative h-[60vh] lg:h-[80vh] w-full">
+            <div className="lg:col-span-7 relative h-[60vh] lg:h-[80vh] w-full rounded-none my-[50px] mx-0">
               <div 
                 ref={stageRef}
                 className="absolute inset-0 border border-soft-white/10 bg-soft-white/5 backdrop-blur-sm overflow-hidden group cursor-pointer hover:border-soft-white/30 transition-colors"
