@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { ContentSubmissions } from '@/entities';
-import { ArrowRight, Clock, Eye, ShieldAlert, Zap, Globe, Lock } from 'lucide-react';
+import { ArrowRight, Clock, Eye, ShieldAlert, Zap, Globe, Lock, Maximize2, Minimize2 } from 'lucide-react';
 
 // --- Utility Components for Motion & Layout ---
 
@@ -66,7 +66,9 @@ export default function HomePage() {
   const [currentContent, setCurrentContent] = useState<ContentSubmissions | null>(null);
   const [recentContent, setRecentContent] = useState<ContentSubmissions[]>([]);
   const [timeRemaining, setTimeRemaining] = useState(60);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef });
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
@@ -104,6 +106,35 @@ export default function HomePage() {
     const secs = seconds % 60;
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
+
+  const toggleFullscreen = async () => {
+    if (!stageRef.current) return;
+    
+    try {
+      if (!isFullscreen) {
+        if (stageRef.current.requestFullscreen) {
+          await stageRef.current.requestFullscreen();
+        }
+        setIsFullscreen(true);
+      } else {
+        if (document.fullscreenElement) {
+          await document.exitFullscreen();
+        }
+        setIsFullscreen(false);
+      }
+    } catch (error) {
+      console.error('Fullscreen error:', error);
+    }
+  };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
 
   return (
     <div ref={containerRef} className="min-h-screen bg-background text-soft-white selection:bg-primary selection:text-white overflow-x-clip">
@@ -159,7 +190,10 @@ export default function HomePage() {
 
             {/* Right Column: The Content Stage */}
             <div className="lg:col-span-7 relative h-[60vh] lg:h-[80vh] w-full">
-              <div className="absolute inset-0 border border-soft-white/10 bg-soft-white/5 backdrop-blur-sm overflow-hidden">
+              <div 
+                ref={stageRef}
+                className="absolute inset-0 border border-soft-white/10 bg-soft-white/5 backdrop-blur-sm overflow-hidden group cursor-pointer hover:border-soft-white/30 transition-colors"
+              >
                 <AnimatePresence mode="wait">
                   {currentContent?.submittedContent ? (
                     <motion.div
@@ -196,7 +230,17 @@ export default function HomePage() {
                 
                 {/* Stage UI Elements */}
                 <div className="absolute top-6 right-6 flex gap-2">
-
+                  <button
+                    onClick={toggleFullscreen}
+                    className="p-2 rounded hover:bg-soft-white/10 transition-colors opacity-0 group-hover:opacity-100"
+                    title={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+                  >
+                    {isFullscreen ? (
+                      <Minimize2 className="w-5 h-5 text-soft-white" />
+                    ) : (
+                      <Maximize2 className="w-5 h-5 text-soft-white" />
+                    )}
+                  </button>
                 </div>
               </div>
               
