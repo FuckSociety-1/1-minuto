@@ -229,10 +229,10 @@ export default function HomePage() {
                 </AnimatePresence>
                 
                 {/* Stage UI Elements */}
-                <div className="absolute top-6 right-6 flex gap-2">
+                <div className="absolute top-6 right-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button
                     onClick={toggleFullscreen}
-                    className="p-2 rounded hover:bg-soft-white/10 transition-colors opacity-0 group-hover:opacity-100"
+                    className="p-2 rounded hover:bg-soft-white/10 transition-colors"
                     title={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
                   >
                     {isFullscreen ? (
