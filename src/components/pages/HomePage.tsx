@@ -186,10 +186,10 @@ export default function HomePage() {
             </div>
 
             {/* Right Column: The Content Stage */}
-            <div className="lg:col-span-7 relative h-[60vh] lg:h-[80vh] w-full rounded-none my-[50px] mx-0">
+            <div className="lg:col-span-7 relative h-[60vh] lg:h-[80vh] w-full rounded-none p-0 my-[50px] mx-0 mt-[50px] mr-0 mb-[99px] ml-0">
               <div 
                 ref={stageRef}
-                className="absolute inset-0 border border-soft-white/10 bg-soft-white/5 backdrop-blur-sm overflow-hidden group cursor-pointer hover:border-soft-white/30 transition-colors"
+                className="absolute inset-0 bg-soft-white/5 backdrop-blur-sm overflow-hidden group cursor-pointer hover:border-soft-white/30 transition-colors border border-solid border-[#f0f0f01a] py-[7px] px-0"
               >
                 <AnimatePresence mode="wait">
                   {currentContent?.submittedContent ? (
@@ -214,7 +214,7 @@ export default function HomePage() {
                     <motion.div 
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      className="w-full h-full flex flex-col items-center justify-center text-center p-12"
+                      className="w-full h-full flex flex-col items-center justify-center text-center my-0 mx-[5px] p-12"
                     >
 
                       <h3 className="font-heading text-4xl text-soft-white/40 mb-2">El escenario está vacío</h3>
