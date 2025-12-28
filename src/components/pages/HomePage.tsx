@@ -151,7 +151,7 @@ export default function HomePage() {
                 <Button
                   onClick={() => navigate('/purchase')}
                   className="bg-primary hover:bg-primary/90 text-white font-paragraph text-lg px-10 py-8 rounded-none border-l-4 border-white/20 transition-all hover:border-white"
-                >{"Comprar -2$3"}</Button>
+                >{"Comprar - $3"}</Button>
                 <div className="flex items-center gap-4 text-soft-white/40 font-paragraph text-sm">
                   <Eye className="w-5 h-5" />
                   <span>Visto por todos los visitantes ahora</span>
