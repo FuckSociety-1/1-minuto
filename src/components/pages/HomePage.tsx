@@ -169,10 +169,7 @@ export default function HomePage() {
                   <h1 className="font-heading text-[12rem] leading-[0.8] text-soft-white mix-blend-difference tracking-tighter">
                     {formatTime(timeRemaining)}
                   </h1>
-                  <p className="font-paragraph text-xl text-soft-white/60 mt-4 max-w-md">
-                    Sixty seconds of absolute visibility. <br/>
-                    One image. One world. One minute.
-                  </p>
+
                 </div>
               </div>
 
@@ -216,9 +213,8 @@ export default function HomePage() {
                       animate={{ opacity: 1 }}
                       className="w-full h-full flex flex-col items-center text-center p-12 my-2 mx-[5px] justify-center"
                     >
-
                       <h3 className="font-heading text-4xl text-soft-white/40 mb-2">El escenario está vacío</h3>
-                      <p className="font-paragraph text-soft-white/30">Sé el primero en reclamar este minuto.</p>
+
                     </motion.div>
                   )}
                 </AnimatePresence>
