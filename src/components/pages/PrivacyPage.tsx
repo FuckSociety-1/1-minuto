@@ -22,7 +22,6 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
-      
       <main className="flex-1 pt-32 pb-16">
         <div className="max-w-[100rem] mx-auto px-8">
           <div className="max-w-4xl mx-auto">
@@ -79,7 +78,7 @@ export default function PrivacyPage() {
 
                     <section>
                       <h2 className="font-heading text-3xl text-soft-white mb-4">6. Contacto</h2>
-                      <p>Para preguntas sobre esta política, contáctanos en: privacy@1minuto.com</p>
+                      <p>Para preguntas sobre esta política, contáctanos en: privacy@theslot.com</p>
                     </section>
                   </div>
                 )}
@@ -88,7 +87,6 @@ export default function PrivacyPage() {
           </div>
         </div>
       </main>
-
       <Footer />
     </div>
   );

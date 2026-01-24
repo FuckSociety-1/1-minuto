@@ -22,7 +22,6 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
-      
       <main className="flex-1 pt-32 pb-16">
         <div className="max-w-[100rem] mx-auto px-8">
           <div className="max-w-4xl mx-auto">
@@ -42,7 +41,7 @@ export default function TermsPage() {
                   <div className="space-y-6">
                     <section>
                       <h2 className="font-heading text-3xl text-soft-white mb-4">1. Aceptación de Términos</h2>
-                      <p>Al usar WorldMinute, aceptas estos términos de servicio. Si no estás de acuerdo, no uses el servicio.</p>
+                      <p>Al usar , TheSlotety aceptas estos términos de servicio. Si no estás de acuerdo, no uses el servicio.</p>
                     </section>
 
                     <section>
@@ -58,8 +57,8 @@ export default function TermsPage() {
                       <ul className="list-disc list-inside space-y-2 ml-4">
                         <li>Cualquier contenido que involucre menores de edad</li>
                         <li>Contenido ilegal o que viole derechos de terceros</li>
-                        <li>Contenido violento, discriminatorio o de odio</li>
-                        <li>Spam o contenido engañoso</li>
+
+                        <li>Contenido pornográfico</li>
                       </ul>
                     </section>
 
@@ -109,7 +108,6 @@ export default function TermsPage() {
           </div>
         </div>
       </main>
-
       <Footer />
     </div>
   );
