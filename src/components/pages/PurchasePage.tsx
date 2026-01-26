@@ -104,7 +104,6 @@ export default function PurchasePage() {
                   </button>
                 </div>
               </div>
-
               {/* Email Input */}
               <div className="space-y-2">
                 <Label htmlFor="email" className="font-paragraph text-base text-soft-white">
@@ -119,7 +118,6 @@ export default function PurchasePage() {
                   className="bg-background border-soft-white/20 text-soft-white font-paragraph"
                 />
               </div>
-
               {/* File Upload */}
               <div className="space-y-4">
                 <Label htmlFor="content" className="font-paragraph text-base text-soft-white">
@@ -138,7 +136,6 @@ export default function PurchasePage() {
                   </p>
                 )}
               </div>
-
               {/* Age Confirmation */}
               <div className="flex items-start gap-3 p-4 bg-primary/10 border border-primary/30 rounded-lg">
                 <Checkbox
@@ -154,7 +151,6 @@ export default function PurchasePage() {
                   Confirmo que soy mayor de 18 años y que tengo derecho legal para usar este servicio
                 </Label>
               </div>
-
               {/* Content Confirmation */}
               <div className="flex items-start gap-3 p-4 bg-primary/10 border border-primary/30 rounded-lg">
                 <Checkbox
@@ -170,13 +166,7 @@ export default function PurchasePage() {
                   Confirmo que mi contenido NO involucra menores de edad bajo ninguna circunstancia y que asumo total responsabilidad legal por el contenido que subo
                 </Label>
               </div>
-
               {/* Review Notice */}
-              <div className="p-4 bg-soft-white/5 border border-soft-white/10 rounded-lg">
-                <p className="font-paragraph text-sm text-soft-white/80 text-center">
-                  Tu contenido será revisado antes de mostrarse públicamente. Recibirás una confirmación por email.
-                </p>
-              </div>
 
               {/* Price and Submit */}
               <div className="space-y-4">
