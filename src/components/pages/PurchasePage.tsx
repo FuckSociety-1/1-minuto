@@ -120,9 +120,7 @@ export default function PurchasePage() {
               </div>
               {/* File Upload */}
               <div className="space-y-4">
-                <Label htmlFor="content" className="font-paragraph text-base text-soft-white">
-                  Subir Imagen o Video
-                </Label>
+
                 <label htmlFor="content" className="block cursor-pointer">
                   <input
                     id="content"
@@ -133,7 +131,7 @@ export default function PurchasePage() {
                   />
                   <div className="text-center py-8">
                     <p className="font-paragraph text-soft-white/70">
-                      {contentFile ? contentFile.name : 'seleccionar archivo o imagen'}
+                      {contentFile ? contentFile.name : 'Seleccionar Imagen o Video'}
                     </p>
                   </div>
                 </label>
