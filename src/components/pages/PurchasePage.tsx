@@ -148,26 +148,12 @@ export default function PurchasePage() {
                   htmlFor="age"
                   className="font-paragraph text-sm text-soft-white cursor-pointer leading-relaxed"
                 >
-                  Confirmo que soy mayor de 18 años y que tengo derecho legal para usar este servicio
+                  Confirmo que tengo al menos 18 años de edad y que he leído y acepto los Términos del Servicio y la Política de Privacidad.
                 </Label>
               </div>
               {/* Content Confirmation */}
-              <div className="flex items-start gap-3 p-4 bg-primary/10 border border-primary/30 rounded-lg">
-                <Checkbox
-                  id="content"
-                  checked={contentConfirmed}
-                  onCheckedChange={(checked) => setContentConfirmed(checked as boolean)}
-                  className="mt-1"
-                />
-                <Label
-                  htmlFor="content"
-                  className="font-paragraph text-sm text-soft-white cursor-pointer leading-relaxed"
-                >
-                  Confirmo que mi contenido NO involucra menores de edad bajo ninguna circunstancia y que asumo total responsabilidad legal por el contenido que subo
-                </Label>
-              </div>
-              {/* Review Notice */}
 
+              {/* Review Notice */}
               {/* Price and Submit */}
               <div className="space-y-4">
                 <div className="flex justify-between items-center p-4 bg-soft-white/5 rounded-lg">
