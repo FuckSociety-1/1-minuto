@@ -123,18 +123,20 @@ export default function PurchasePage() {
                 <Label htmlFor="content" className="font-paragraph text-base text-soft-white">
                   Subir Imagen o Video
                 </Label>
-                <Input
-                  id="content"
-                  type="file"
-                  accept="image/*,video/*"
-                  onChange={handleFileChange}
-                  className="bg-background border-soft-white/30 text-soft-white font-paragraph file:mr-1.5 file:py-1.5 file:px-2 file:rounded-lg file:border-0 file:bg-primary file:text-primary-foreground file:font-paragraph file:text-sm hover:file:bg-primary/90"
-                />
-                {contentFile && (
-                  <p className="font-paragraph text-sm text-soft-white/60">
-                    Archivo seleccionado: {contentFile.name}
-                  </p>
-                )}
+                <label htmlFor="content" className="block cursor-pointer">
+                  <input
+                    id="content"
+                    type="file"
+                    accept="image/*,video/*"
+                    onChange={handleFileChange}
+                    className="hidden"
+                  />
+                  <div className="text-center py-8">
+                    <p className="font-paragraph text-soft-white/70">
+                      {contentFile ? contentFile.name : 'seleccionar archivo o imagen'}
+                    </p>
+                  </div>
+                </label>
               </div>
               {/* Age Confirmation */}
               <div className="flex items-start gap-3 p-4 bg-primary/10 border border-primary/30 rounded-lg">
