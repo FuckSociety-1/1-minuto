@@ -260,60 +260,8 @@ export default function HomePage() {
             ))}
           </motion.div>
         </div>
-        <section className="py-32 px-6 md:px-12 max-w-[100rem] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
-            <div className="sticky top-32">
-              <FadeIn>
-                <h2 className="font-heading text-6xl md:text-8xl text-soft-white leading-[0.9] mb-8">
-                  The Rules <br/>
-                  <span className="text-primary italic">of the Void.</span>
-                </h2>
-                <p className="font-paragraph text-xl text-soft-white/60 max-w-md leading-relaxed">
-                  En un mundo de permanencia digital, ofrecemos lo contrario. 
-                  Un espacio donde el contenido vive, respira y muere en 60 segundos.
-                </p>
-              </FadeIn>
-            </div>
 
-            <div className="space-y-24 pt-12">
-              {[
-                {
-                  icon: Clock,
-                  title: "Temporalidad Absoluta",
-                  desc: "Tu imagen o video se muestra durante exactamente 60 segundos. Ni uno más. Después, desaparece en el éter digital para siempre."
-                },
-                {
-                  icon: Globe,
-                  title: "Audiencia Global",
-                  desc: "Durante tu minuto, eres el dueño exclusivo de la pantalla principal. Cada visitante, en cualquier parte del mundo, ve lo que tú decides mostrar."
-                },
-                {
-                  icon: Lock,
-                  title: "Exclusividad +18",
-                  desc: "Este es un espacio adulto. Requerimos madurez y responsabilidad. Cero tolerancia con contenido ilegal. Nosotros ponemos el escenario, tú pones los límites."
-                }
-              ].map((item, idx) => (
-                <FadeIn key={idx} delay={idx * 0.2} className="group">
-                  <div className="flex items-start gap-6 border-t border-soft-white/10 pt-8 transition-colors hover:border-primary/50">
-                    <div className="p-4 bg-soft-white/5 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-500">
-                      <item.icon size={32} strokeWidth={1} />
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-4xl text-soft-white mb-4 group-hover:translate-x-2 transition-transform duration-500">
-                        {item.title}
-                      </h3>
-                      <p className="font-paragraph text-lg text-soft-white/50 leading-relaxed max-w-lg">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-        </section>
         {/* --- RECENT HISTORY (Data Driven) --- */}
-
         {/* --- ATMOSPHERIC BREAK --- */}
         {/* --- CTA & LEGAL --- */}
       </main>
