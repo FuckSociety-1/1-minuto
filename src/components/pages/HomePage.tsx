@@ -313,59 +313,8 @@ export default function HomePage() {
           </div>
         </section>
         {/* --- RECENT HISTORY (Data Driven) --- */}
-        <section className="py-32 bg-soft-white/5 border-y border-soft-white/5">
-          <div className="max-w-[120rem] mx-auto px-6 md:px-12">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-              <div>
-                <h2 className="font-heading text-5xl md:text-6xl text-soft-white mb-4">
-                  Ecos Recientes
-                </h2>
-                <p className="font-paragraph text-soft-white/50">
-                  Momentos que ya han pasado a la historia.
-                </p>
-              </div>
-              <Button variant="outline" className="border-soft-white/20 text-soft-white hover:bg-soft-white hover:text-background rounded-none px-8">
-                Ver Archivo Completo
-              </Button>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
-              {recentContent.length > 0 ? (
-                recentContent.map((item, idx) => (
-                  <FadeIn key={item._id || idx} delay={idx * 0.1} className="aspect-[4/5] relative group overflow-hidden bg-black">
-                    {item.submittedContent && (
-                      <Image 
-                        src={item.submittedContent} 
-                        alt="Recent submission" 
-                        width={600}
-                        className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                      <span className="font-heading text-2xl text-white">Minuto #{idx + 420}</span>
-                      <span className="font-paragraph text-xs text-white/60 uppercase tracking-widest">Expirado</span>
-                    </div>
-                  </FadeIn>
-                ))
-              ) : (
-                // Fallback placeholders if no data yet
-                ([1, 2, 3, 4].map((_, idx) => (
-                  <FadeIn key={idx} delay={idx * 0.1} className="aspect-[4/5] relative group overflow-hidden bg-black border border-soft-white/5">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-full h-full bg-soft-white/5 animate-pulse" />
-                      <span className="absolute font-heading text-soft-white/20 text-4xl">?</span>
-                    </div>
-                    <div className="absolute bottom-0 left-0 w-full p-6 border-t border-soft-white/10 bg-black/50 backdrop-blur-sm">
-                      <p className="font-paragraph text-xs text-soft-white/40 uppercase">Espacio Disponible</p>
-                    </div>
-                  </FadeIn>
-                )))
-              )}
-            </div>
-          </div>
-        </section>
         {/* --- ATMOSPHERIC BREAK --- */}
-
         {/* --- CTA & LEGAL --- */}
       </main>
       <Footer />
