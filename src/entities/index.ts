@@ -11,7 +11,7 @@ export interface ContentSubmissions {
   _id: string;
   _createdDate?: Date;
   _updatedDate?: Date;
-  /** @wixFieldType image */
+  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   submittedContent?: string;
   /** @wixFieldType text */
   userEmail?: string;
