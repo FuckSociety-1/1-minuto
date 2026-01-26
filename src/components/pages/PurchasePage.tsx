@@ -158,7 +158,7 @@ export default function PurchasePage() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center p-4 bg-soft-white/5 rounded-lg">
                   <span className="font-paragraph text-lg text-soft-white">Total</span>
-                  <span className="font-heading text-3xl text-primary">$3.00 USD</span>
+                  <span className="font-heading text-3xl text-primary-foreground">$3.00 USD</span>
                 </div>
                 <Button
                   onClick={handleSubmit}
