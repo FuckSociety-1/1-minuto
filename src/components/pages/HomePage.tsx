@@ -108,14 +108,21 @@ export default function HomePage() {
 
   const loadCurrentContent = async () => {
     const { items } = await BaseCrudService.getAll<ContentSubmissions>('contentsubmissions');
-    const approvedContent = items.filter(item => item.reviewStatus === 'approved');
+    // Show all content (approved and pending) in order of submission
+    const allContent = items.sort((a, b) => {
+      const dateA = new Date(a.submissionDate || 0).getTime();
+      const dateB = new Date(b.submissionDate || 0).getTime();
+      return dateA - dateB;
+    });
     
-    // Preserve original random selection logic
-    if (approvedContent.length > 0) {
-      const randomContent = approvedContent[Math.floor(Math.random() * approvedContent.length)];
-      setCurrentContent(randomContent);
+    if (allContent.length > 0) {
+      // Get the first pending or approved content
+      const nextContent = allContent.find(item => item.reviewStatus === 'pending' || item.reviewStatus === 'approved');
+      if (nextContent) {
+        setCurrentContent(nextContent);
+      }
       // Utilize data for new section: Recent History
-      setRecentContent(approvedContent.slice(0, 4)); 
+      setRecentContent(allContent.slice(0, 4)); 
     }
   };
 

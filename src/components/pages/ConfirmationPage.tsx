@@ -49,10 +49,8 @@ export default function ConfirmationPage() {
                   ¿Qué sigue?
                 </p>
                 <ul className="font-paragraph text-sm text-soft-white/80 space-y-2 list-disc list-inside">
-                  <li>Nuestro equipo revisará tu contenido en las próximas horas</li>
-                  <li>Recibirás un email de confirmación cuando sea aprobado</li>
                   <li>Tu contenido se mostrará durante 60 segundos a todos los visitantes</li>
-                  <li>Si el contenido no cumple con nuestras políticas, será rechazado</li>
+                  <li>Se publicará cuando termine el contenido actual</li>
                 </ul>
               </div>
 

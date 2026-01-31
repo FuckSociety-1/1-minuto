@@ -33,32 +33,35 @@ export default function UploadPage() {
 
     setIsProcessing(true);
 
-    // Simulate file upload processing
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // Convert file to data URL
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+      const fileContent = e.target?.result as string;
+      const paymentConfirmationId = `FREE-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
-    const paymentConfirmationId = `FREE-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+      // Create submission with actual uploaded file
+      const submission: ContentSubmissions = {
+        _id: crypto.randomUUID(),
+        userEmail: email,
+        submittedContent: fileContent,
+        reviewStatus: 'pending',
+        ageAndContentConfirmed: true,
+        submissionDate: new Date().toISOString(),
+        paymentConfirmationId,
+        moderatorNotes: 'Free upload - no payment required'
+      };
 
-    // Create submission with placeholder image
-    const submission: ContentSubmissions = {
-      _id: crypto.randomUUID(),
-      userEmail: email,
-      submittedContent: 'https://static.wixstatic.com/media/5ad9e7_ca46191dc03f4676b722449480c20b41~mv2.png?originWidth=768&originHeight=576',
-      reviewStatus: 'approved',
-      ageAndContentConfirmed: true,
-      submissionDate: new Date().toISOString(),
-      paymentConfirmationId,
-      moderatorNotes: 'Free upload - no payment required'
+      await BaseCrudService.create('contentsubmissions', submission);
+
+      setIsProcessing(false);
+      setUploadSuccess(true);
+
+      // Redirect to confirmation after 2 seconds
+      setTimeout(() => {
+        navigate('/confirmation', { state: { confirmationId: paymentConfirmationId } });
+      }, 2000);
     };
-
-    await BaseCrudService.create('contentsubmissions', submission);
-
-    setIsProcessing(false);
-    setUploadSuccess(true);
-
-    // Redirect to confirmation after 2 seconds
-    setTimeout(() => {
-      navigate('/confirmation', { state: { confirmationId: paymentConfirmationId } });
-    }, 2000);
+    reader.readAsDataURL(contentFile);
   };
 
   if (uploadSuccess) {
@@ -178,7 +181,7 @@ export default function UploadPage() {
                   {isProcessing ? 'Subiendo...' : 'Subir Contenido'}
                 </Button>
                 <p className="font-paragraph text-xs text-soft-white/60 text-center">
-                  Tu contenido será visible durante 60 segundos después de ser aprobado
+                  Tu contenido será visible durante 60 segundos cuando sea tu turno
                 </p>
               </div>
             </div>
