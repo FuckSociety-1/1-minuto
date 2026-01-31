@@ -4,6 +4,7 @@ import { ScrollToTop } from '@/lib/scroll-to-top';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
 import PurchasePage from '@/components/pages/PurchasePage';
+import UploadPage from '@/components/pages/UploadPage';
 import ConfirmationPage from '@/components/pages/ConfirmationPage';
 import PrivacyPage from '@/components/pages/PrivacyPage';
 import TermsPage from '@/components/pages/TermsPage';
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "purchase",
         element: <PurchasePage />,
+      },
+      {
+        path: "upload",
+        element: <UploadPage />,
       },
       {
         path: "confirmation",

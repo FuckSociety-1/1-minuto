@@ -3,31 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
-import { BaseCrudService } from '@/integrations';
-import { ContentSubmissions } from '@/entities';
 import { CreditCard, Wallet } from 'lucide-react';
 
 export default function PurchasePage() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [contentFile, setContentFile] = useState<File | null>(null);
-  const [ageConfirmed, setAgeConfirmed] = useState(false);
-  const [contentConfirmed, setContentConfirmed] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'paypal' | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setContentFile(e.target.files[0]);
-    }
-  };
-
   const handleSubmit = async () => {
-    if (!email || !contentFile || !ageConfirmed || !contentConfirmed || !paymentMethod) {
-      alert('Por favor completa todos los campos y confirmaciones requeridas');
+    if (!paymentMethod) {
+      alert('Por favor selecciona un método de pago');
       return;
     }
 
@@ -36,24 +22,10 @@ export default function PurchasePage() {
     // Simulate payment processing
     await new Promise(resolve => setTimeout(resolve, 2000));
 
-    const paymentConfirmationId = `PAY-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-
-    // Create submission
-    const submission: ContentSubmissions = {
-      _id: crypto.randomUUID(),
-      userEmail: email,
-      submittedContent: 'https://static.wixstatic.com/media/5ad9e7_ca46191dc03f4676b722449480c20b41~mv2.png?originWidth=768&originHeight=576',
-      reviewStatus: 'pending',
-      ageAndContentConfirmed: true,
-      submissionDate: new Date().toISOString(),
-      paymentConfirmationId,
-      moderatorNotes: ''
-    };
-
-    await BaseCrudService.create('contentsubmissions', submission);
-
     setIsProcessing(false);
-    navigate('/confirmation', { state: { confirmationId: paymentConfirmationId } });
+    
+    // Redirect to upload page after successful payment
+    navigate('/upload');
   };
 
   return (
@@ -104,56 +76,7 @@ export default function PurchasePage() {
                   </button>
                 </div>
               </div>
-              {/* Email Input */}
-              <div className="space-y-2">
-                <Label htmlFor="email" className="font-paragraph text-base text-soft-white">
-                  Email
-                </Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="example@email.com"
-                  className="bg-background border-soft-white/20 text-soft-white font-paragraph"
-                />
-              </div>
-              {/* File Upload */}
-              <div className="space-y-4">
 
-                <label htmlFor="content" className="block cursor-pointer">
-                  <input
-                    id="content"
-                    type="file"
-                    accept="image/*,video/*"
-                    onChange={handleFileChange}
-                    className="hidden"
-                  />
-                  <div className="text-center py-8">
-                    <p className="font-paragraph text-soft-white/70">
-                      {contentFile ? contentFile.name : 'Seleccionar Imagen o Video'}
-                    </p>
-                  </div>
-                </label>
-              </div>
-              {/* Age Confirmation */}
-              <div className="flex items-start gap-3 p-4 bg-primary/10 border border-primary/30 rounded-lg">
-                <Checkbox
-                  id="age"
-                  checked={ageConfirmed}
-                  onCheckedChange={(checked) => setAgeConfirmed(checked as boolean)}
-                  className="mt-1"
-                />
-                <Label
-                  htmlFor="age"
-                  className="font-paragraph text-sm text-soft-white cursor-pointer leading-relaxed"
-                >
-                  Confirmo que tengo al menos 18 años de edad y que he leído y acepto los Términos del Servicio y la Política de Privacidad.
-                </Label>
-              </div>
-              {/* Content Confirmation */}
-
-              {/* Review Notice */}
               {/* Price and Submit */}
               <div className="space-y-4">
                 <div className="flex justify-between items-center p-4 bg-soft-white/5 rounded-lg">
@@ -162,10 +85,10 @@ export default function PurchasePage() {
                 </div>
                 <Button
                   onClick={handleSubmit}
-                  disabled={!email || !contentFile || !ageConfirmed || !contentConfirmed || !paymentMethod || isProcessing}
+                  disabled={!paymentMethod || isProcessing}
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-paragraph text-lg py-6 rounded-lg h-auto disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isProcessing ? 'Procesando...' : 'Pagar y Enviar'}
+                  {isProcessing ? 'Procesando...' : 'Pagar y Continuar'}
                 </Button>
                 <p className="font-paragraph text-xs text-soft-white/60 text-center">
                   Pago único y no reembolsable
