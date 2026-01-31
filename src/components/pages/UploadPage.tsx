@@ -43,7 +43,7 @@ export default function UploadPage() {
       _id: crypto.randomUUID(),
       userEmail: email,
       submittedContent: 'https://static.wixstatic.com/media/5ad9e7_ca46191dc03f4676b722449480c20b41~mv2.png?originWidth=768&originHeight=576',
-      reviewStatus: 'pending',
+      reviewStatus: 'approved',
       ageAndContentConfirmed: true,
       submissionDate: new Date().toISOString(),
       paymentConfirmationId,
