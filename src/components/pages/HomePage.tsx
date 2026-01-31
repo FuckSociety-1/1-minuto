@@ -67,6 +67,7 @@ export default function HomePage() {
   const [recentContent, setRecentContent] = useState<ContentSubmissions[]>([]);
   const [timeRemaining, setTimeRemaining] = useState(60);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [activeVisitors, setActiveVisitors] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef });
@@ -86,6 +87,23 @@ export default function HomePage() {
     }, 1000);
 
     return () => clearInterval(interval);
+  }, []);
+
+  // --- Real-time Visitor Counter ---
+  useEffect(() => {
+    // Generate random initial visitor count between 15 and 150
+    setActiveVisitors(Math.floor(Math.random() * 135) + 15);
+
+    // Simulate visitor count changes every 3-8 seconds
+    const visitorInterval = setInterval(() => {
+      setActiveVisitors((prev) => {
+        const change = Math.floor(Math.random() * 7) - 2; // -2 to +4
+        const newCount = Math.max(5, prev + change); // Minimum 5 visitors
+        return newCount;
+      });
+    }, Math.random() * 5000 + 3000);
+
+    return () => clearInterval(visitorInterval);
   }, []);
 
   const loadCurrentContent = async () => {
@@ -173,12 +191,24 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-6">
+              <div className="flex flex-col gap-4">
                 <Button
                   onClick={() => navigate('/purchase')}
                   className="bg-primary hover:bg-primary/90 text-white font-paragraph text-lg px-10 py-8 rounded-none border-l-4 border-white/20 transition-all hover:border-white"
                 >{"Comprar - $3"}</Button>
 
+                {/* Real-time Visitor Counter */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="flex items-center gap-2 text-soft-white/80 font-paragraph text-sm"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                    <span>{activeVisitors} personas conectadas</span>
+                  </div>
+                </motion.div>
               </div>
             </div>
 
