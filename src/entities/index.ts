@@ -11,8 +11,20 @@ export interface ContentSubmissions {
   _id: string;
   _createdDate?: Date;
   _updatedDate?: Date;
+  /** @wixFieldType boolean */
+  automaticallyPublished?: boolean;
   /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
   submittedContent?: string;
+  /** @wixFieldType datetime */
+  aiReviewTimestamp?: Date | string;
+  /** @wixFieldType text */
+  aiRejectionReason?: string;
+  /** @wixFieldType text */
+  aiReviewStatus?: string;
+  /** @wixFieldType url */
+  submittedVideo?: string;
+  /** @wixFieldType text */
+  contentType?: string;
   /** @wixFieldType text */
   userEmail?: string;
   /** @wixFieldType text */
