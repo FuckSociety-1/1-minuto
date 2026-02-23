@@ -29,17 +29,7 @@ const FadeIn: React.FC<{ children: React.ReactNode; delay?: number; className?: 
   );
 };
 
-const ParallaxImage: React.FC<{ src: string; alt: string; className?: string }> = ({ src, alt, className }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-
-  return (
-    <div ref={ref} className={`overflow-hidden ${className}`}>
-
-    </div>
-  );
-};
+// ... keep existing code (ParallaxImage component removed)
 
 const RevealText: React.FC<{ text: string; className?: string }> = ({ text, className = "" }) => {
   const ref = useRef(null);
@@ -113,10 +103,6 @@ export default function HomePage() {
   const loadCurrentContent = async () => {
     const { items } = await BaseCrudService.getAll<ContentSubmissions>('contentsubmissions');
     
-    // Separate paid and free content
-    const paidContent = items.filter(item => item.paymentConfirmationId?.startsWith('PAID'));
-    const freeContent = items.filter(item => item.paymentConfirmationId?.startsWith('FREE'));
-    
     // Sort by submission date (oldest first for queue)
     const sortByDate = (a: ContentSubmissions, b: ContentSubmissions) => {
       const dateA = new Date(a.submissionDate || 0).getTime();
@@ -124,18 +110,14 @@ export default function HomePage() {
       return dateA - dateB;
     };
     
-    paidContent.sort(sortByDate);
-    freeContent.sort(sortByDate);
+    items.sort(sortByDate);
     
-    // Priority: paid content first, then free content
-    const allContent = [...paidContent, ...freeContent];
-    
-    if (allContent.length > 0) {
-      const nextContent = allContent[0];
+    if (items.length > 0) {
+      const nextContent = items[0];
       if (nextContent) {
         setCurrentContent(nextContent);
       }
-      setRecentContent(allContent.slice(0, 4)); 
+      setRecentContent(items.slice(0, 4)); 
     } else {
       setCurrentContent(null);
     }

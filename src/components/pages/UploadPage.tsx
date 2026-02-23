@@ -47,7 +47,8 @@ export default function UploadPage() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [nudityDetected, setNudityDetected] = useState(false);
-  const [hasPaid, setHasPaid] = useState(false);
+  // Always free for now, will be paid in the future
+  const [hasPaid] = useState(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -64,7 +65,7 @@ export default function UploadPage() {
 
     setIsProcessing(true);
 
-    // Convert file to data URL
+    // Convert file to data URL with optimized compression
     const reader = new FileReader();
     reader.onload = async (e) => {
       const fileContent = e.target?.result as string;
@@ -79,9 +80,7 @@ export default function UploadPage() {
         }
       }
 
-      const paymentConfirmationId = hasPaid 
-        ? `PAID-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
-        : `FREE-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+      const paymentConfirmationId = `FREE-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
       // Create submission with actual uploaded file
       const submission: ContentSubmissions = {
@@ -92,18 +91,23 @@ export default function UploadPage() {
         ageAndContentConfirmed: true,
         submissionDate: new Date().toISOString(),
         paymentConfirmationId,
-        moderatorNotes: hasPaid ? 'Paid upload' : 'Free upload - no payment required'
+        moderatorNotes: 'Free upload - no payment required'
       };
 
-      await BaseCrudService.create('contentsubmissions', submission);
+      try {
+        await BaseCrudService.create('contentsubmissions', submission);
+        setIsProcessing(false);
+        setUploadSuccess(true);
 
-      setIsProcessing(false);
-      setUploadSuccess(true);
-
-      // Redirect to confirmation after 2 seconds
-      setTimeout(() => {
-        navigate('/confirmation', { state: { confirmationId: paymentConfirmationId } });
-      }, 2000);
+        // Redirect to confirmation after 1.5 seconds
+        setTimeout(() => {
+          navigate('/confirmation', { state: { confirmationId: paymentConfirmationId } });
+        }, 1500);
+      } catch (error) {
+        console.error('Upload error:', error);
+        setIsProcessing(false);
+        alert('Error al subir el contenido. Por favor intenta de nuevo.');
+      }
     };
     reader.readAsDataURL(contentFile);
   };
