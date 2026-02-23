@@ -65,51 +65,65 @@ export default function UploadPage() {
 
     setIsProcessing(true);
 
-    // Convert file to data URL with optimized compression
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-      const fileContent = e.target?.result as string;
-      
-      // Check for nudity (only for images)
+    try {
+      // For images: convert to data URL and check for nudity
       if (contentFile.type.startsWith('image/')) {
-        const hasNudity = await detectNudity(fileContent);
-        if (hasNudity) {
-          setNudityDetected(true);
-          setIsProcessing(false);
-          return;
-        }
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+          const fileContent = e.target?.result as string;
+          
+          // Check for nudity
+          const hasNudity = await detectNudity(fileContent);
+          if (hasNudity) {
+            setNudityDetected(true);
+            setIsProcessing(false);
+            return;
+          }
+
+          await createSubmission(fileContent, contentFile.type);
+        };
+        reader.readAsDataURL(contentFile);
+      } else {
+        // For videos: create object URL instead of data URL
+        const videoUrl = URL.createObjectURL(contentFile);
+        await createSubmission(videoUrl, contentFile.type);
       }
+    } catch (error) {
+      console.error('Upload error:', error);
+      setIsProcessing(false);
+      alert('Error al subir el contenido. Por favor intenta de nuevo.');
+    }
+  };
 
-      const paymentConfirmationId = `FREE-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  const createSubmission = async (fileContent: string, fileType: string) => {
+    const paymentConfirmationId = `FREE-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
-      // Create submission with actual uploaded file
-      const submission: ContentSubmissions = {
-        _id: crypto.randomUUID(),
-        userEmail: email,
-        submittedContent: fileContent,
-        reviewStatus: 'approved',
-        ageAndContentConfirmed: true,
-        submissionDate: new Date().toISOString(),
-        paymentConfirmationId,
-        moderatorNotes: 'Free upload - no payment required'
-      };
-
-      try {
-        await BaseCrudService.create('contentsubmissions', submission);
-        setIsProcessing(false);
-        setUploadSuccess(true);
-
-        // Redirect to confirmation after 1.5 seconds
-        setTimeout(() => {
-          navigate('/confirmation', { state: { confirmationId: paymentConfirmationId } });
-        }, 1500);
-      } catch (error) {
-        console.error('Upload error:', error);
-        setIsProcessing(false);
-        alert('Error al subir el contenido. Por favor intenta de nuevo.');
-      }
+    const submission: ContentSubmissions = {
+      _id: crypto.randomUUID(),
+      userEmail: email,
+      submittedContent: fileContent,
+      contentType: fileType.startsWith('image/') ? 'image' : 'video',
+      reviewStatus: 'approved',
+      ageAndContentConfirmed: true,
+      submissionDate: new Date().toISOString(),
+      paymentConfirmationId,
+      moderatorNotes: 'Free upload - no payment required'
     };
-    reader.readAsDataURL(contentFile);
+
+    try {
+      await BaseCrudService.create('contentsubmissions', submission);
+      setIsProcessing(false);
+      setUploadSuccess(true);
+
+      // Redirect to confirmation after 1.5 seconds
+      setTimeout(() => {
+        navigate('/confirmation', { state: { confirmationId: paymentConfirmationId } });
+      }, 1500);
+    } catch (error) {
+      console.error('Create submission error:', error);
+      setIsProcessing(false);
+      alert('Error al subir el contenido. Por favor intenta de nuevo.');
+    }
   };
 
   if (nudityDetected) {
