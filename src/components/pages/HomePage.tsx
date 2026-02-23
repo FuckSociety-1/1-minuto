@@ -223,44 +223,16 @@ export default function HomePage() {
                 className="absolute inset-0 bg-soft-white/5 backdrop-blur-sm overflow-hidden group cursor-pointer hover:border-soft-white/30 transition-colors border border-solid border-[#f0f0f01a] py-[7px] px-0 mt-0 mr-0 mb-0.5 ml-0"
               >
                 <AnimatePresence mode="wait">
-                  {currentContent?.submittedContent ? (
-                    <motion.div
-                      key={currentContent._id}
-                      initial={{ opacity: 0, scale: 1.1 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 1.5 }}
-                      className="w-full h-full"
-                    >
-                      {currentContent.submittedContent.startsWith('data:video') ? (
-                        <video 
-                          src={currentContent.submittedContent}
-                          controls
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <Image 
-                          src={currentContent.submittedContent} 
-                          alt="Contenido actual en vivo"
-                          width={1600}
-                          className="w-full h-full object-cover"
-                        />
-                      )}
-                      {/* Overlay Gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
-                    </motion.div>
-                  ) : (
-                    <motion.div 
-                      key="empty"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="w-full h-full flex flex-col items-center text-center p-12 justify-center"
-                    >
-                      <h3 className="font-heading text-5xl text-soft-white/40">El escenario está vacío</h3>
-                      <p className="font-paragraph text-lg text-soft-white/30 mt-4">Sube tu contenido para que aparezca aquí</p>
-                    </motion.div>
-                  )}
+                  <motion.div 
+                    key="empty"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="w-full h-full flex flex-col items-center text-center p-12 justify-center"
+                  >
+                    <h3 className="font-heading text-5xl text-soft-white/40">El escenario está vacío</h3>
+                    <p className="font-paragraph text-lg text-soft-white/30 mt-4">Sube tu contenido para que aparezca aquí</p>
+                  </motion.div>
                 </AnimatePresence>
                 
                 {/* Stage UI Elements */}
