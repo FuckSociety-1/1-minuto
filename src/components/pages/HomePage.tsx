@@ -219,64 +219,9 @@ export default function HomePage() {
 
             {/* Right Column: The Content Stage */}
             <div className="lg:col-span-7 relative h-[60vh] lg:h-[80vh] w-full rounded-none my-[50px] mx-0 mt-[50px] mr-0 mb-[99px] ml-0 p-0">
-              <div 
-                ref={stageRef}
-                className="absolute inset-0 bg-soft-white/5 backdrop-blur-sm overflow-hidden group cursor-pointer hover:border-soft-white/30 transition-colors border border-solid border-[#f0f0f01a] py-[7px] px-0 mt-0 mr-0 mb-0.5 ml-0 flex items-center justify-center"
-              >
-                <AnimatePresence mode="wait">
-                  {!currentContent ? (
-                    <motion.div 
-                      key="empty"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="w-full h-full flex flex-col items-center text-center p-12 justify-center"
-                    >
-                      <h3 className="font-heading text-5xl text-soft-white/40">El escenario está vacío</h3>
-                      <p className="font-paragraph text-lg text-soft-white/30 mt-4">Sube tu contenido para que aparezca aquí</p>
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key={currentContent._id}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.5 }}
-                      className="w-full h-full flex items-center justify-center"
-                    >
-                      {currentContent.contentType === 'image' ? (
-                        <Image src={currentContent.submittedContent || ''} alt="Submitted content" className="w-full h-full object-contain" />
-                      ) : (
-                        <video
-                          src={currentContent.submittedContent}
-                          controls
-                          className="w-full h-full object-contain"
-                          autoPlay
-                          muted
-                        />
-                      )}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-                
-                {/* Stage UI Elements */}
-                <div className="absolute top-6 right-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                  <button
-                    onClick={toggleFullscreen}
-                    className="p-2 rounded hover:bg-soft-white/10 transition-colors"
-                    title={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
-                  >
-                    {isFullscreen ? (
-                      <Minimize2 className="w-5 h-5 text-soft-white" />
-                    ) : (
-                      <Maximize2 className="w-5 h-5 text-soft-white" />
-                    )}
-                  </button>
-                </div>
-              </div>
+
               {/* Decorative Elements */}
               <div className="absolute -bottom-6 -left-6 w-24 h-24 border-l border-b border-primary/30" />
-
             </div>
           </div>
         </section>
