@@ -66,28 +66,24 @@ export default function UploadPage() {
     setIsProcessing(true);
 
     try {
-      // For images: convert to data URL and check for nudity
-      if (contentFile.type.startsWith('image/')) {
-        const reader = new FileReader();
-        reader.onload = async (e) => {
-          const fileContent = e.target?.result as string;
-          
-          // Check for nudity
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        const fileContent = e.target?.result as string;
+        
+        // For images: check for nudity
+        if (contentFile.type.startsWith('image/')) {
           const hasNudity = await detectNudity(fileContent);
           if (hasNudity) {
             setNudityDetected(true);
             setIsProcessing(false);
             return;
           }
+        }
 
-          await createSubmission(fileContent, contentFile.type);
-        };
-        reader.readAsDataURL(contentFile);
-      } else {
-        // For videos: create object URL instead of data URL
-        const videoUrl = URL.createObjectURL(contentFile);
-        await createSubmission(videoUrl, contentFile.type);
-      }
+        // For both images and videos: use data URL
+        await createSubmission(fileContent, contentFile.type);
+      };
+      reader.readAsDataURL(contentFile);
     } catch (error) {
       console.error('Upload error:', error);
       setIsProcessing(false);

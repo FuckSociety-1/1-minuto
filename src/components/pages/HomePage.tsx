@@ -5,10 +5,11 @@ import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Image } from '@/components/ui/image';
+{/* ... keep existing code (Image import removed) */}
 import { BaseCrudService } from '@/integrations';
 import { ContentSubmissions } from '@/entities';
 import { ArrowRight, Clock, Eye, ShieldAlert, Zap, Globe, Lock, Maximize2, Minimize2 } from 'lucide-react';
+import { Image } from '@/components/ui/image';
 
 // --- Utility Components for Motion & Layout ---
 
@@ -244,17 +245,14 @@ export default function HomePage() {
                       className="w-full h-full flex items-center justify-center"
                     >
                       {currentContent.contentType === 'image' ? (
-                        <Image
-                          src={currentContent.submittedContent || ''}
-                          alt="Submitted content"
-                          className="w-full h-full object-contain"
-                        />
+                        <Image src={currentContent.submittedContent || ''} alt="Submitted content" className="w-full h-full object-contain" />
                       ) : (
                         <video
                           src={currentContent.submittedContent}
                           controls
                           className="w-full h-full object-contain"
                           autoPlay
+                          muted
                         />
                       )}
                     </motion.div>
