@@ -79,6 +79,10 @@ export default function HomePage() {
     const interval = setInterval(() => {
       setTimeRemaining((prev) => {
         if (prev <= 1) {
+          // Remove current content and load next
+          if (currentContent) {
+            BaseCrudService.delete('contentsubmissions', currentContent._id);
+          }
           loadCurrentContent();
           return 60;
         }
@@ -87,7 +91,7 @@ export default function HomePage() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentContent]);
 
   // --- Real-time Visitor Counter ---
   useEffect(() => {
@@ -108,21 +112,32 @@ export default function HomePage() {
 
   const loadCurrentContent = async () => {
     const { items } = await BaseCrudService.getAll<ContentSubmissions>('contentsubmissions');
-    // Show all content (approved and pending) in order of submission
-    const allContent = items.sort((a, b) => {
+    
+    // Separate paid and free content
+    const paidContent = items.filter(item => item.paymentConfirmationId?.startsWith('PAID'));
+    const freeContent = items.filter(item => item.paymentConfirmationId?.startsWith('FREE'));
+    
+    // Sort by submission date (oldest first for queue)
+    const sortByDate = (a: ContentSubmissions, b: ContentSubmissions) => {
       const dateA = new Date(a.submissionDate || 0).getTime();
       const dateB = new Date(b.submissionDate || 0).getTime();
       return dateA - dateB;
-    });
+    };
+    
+    paidContent.sort(sortByDate);
+    freeContent.sort(sortByDate);
+    
+    // Priority: paid content first, then free content
+    const allContent = [...paidContent, ...freeContent];
     
     if (allContent.length > 0) {
-      // Get the first pending or approved content
-      const nextContent = allContent.find(item => item.reviewStatus === 'pending' || item.reviewStatus === 'approved');
+      const nextContent = allContent[0];
       if (nextContent) {
         setCurrentContent(nextContent);
       }
-      // Utilize data for new section: Recent History
       setRecentContent(allContent.slice(0, 4)); 
+    } else {
+      setCurrentContent(null);
     }
   };
 
@@ -235,23 +250,33 @@ export default function HomePage() {
                       transition={{ duration: 1.5 }}
                       className="w-full h-full"
                     >
-                      <Image 
-                        src={currentContent.submittedContent} 
-                        alt="Contenido actual en vivo"
-                        width={1600}
-                        className="w-full h-full object-cover"
-                      />
+                      {currentContent.submittedContent.startsWith('data:video') ? (
+                        <video 
+                          src={currentContent.submittedContent}
+                          controls
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <Image 
+                          src={currentContent.submittedContent} 
+                          alt="Contenido actual en vivo"
+                          width={1600}
+                          className="w-full h-full object-cover"
+                        />
+                      )}
                       {/* Overlay Gradient */}
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
                     </motion.div>
                   ) : (
                     <motion.div 
+                      key="empty"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      className="w-full h-full flex flex-col items-center text-center p-12 my-2 mx-[5px] justify-center"
+                      exit={{ opacity: 0 }}
+                      className="w-full h-full flex flex-col items-center text-center p-12 justify-center"
                     >
-                      <h3 className="font-heading text-4xl text-soft-white/40 mb-2">El escenario está vacío</h3>
-
+                      <h3 className="font-heading text-5xl text-soft-white/40">El escenario está vacío</h3>
+                      <p className="font-paragraph text-lg text-soft-white/30 mt-4">Sube tu contenido para que aparezca aquí</p>
                     </motion.div>
                   )}
                 </AnimatePresence>

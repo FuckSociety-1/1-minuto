@@ -4,12 +4,13 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { CreditCard, Wallet } from 'lucide-react';
+import { CreditCard, Wallet, CheckCircle } from 'lucide-react';
 
 export default function PurchasePage() {
   const navigate = useNavigate();
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'paypal' | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
 
   const handleSubmit = async () => {
     if (!paymentMethod) {
@@ -23,10 +24,31 @@ export default function PurchasePage() {
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     setIsProcessing(false);
+    setPaymentSuccess(true);
     
     // Redirect to upload page after successful payment
-    navigate('/upload');
+    setTimeout(() => {
+      navigate('/upload');
+    }, 2000);
   };
+
+  if (paymentSuccess) {
+    return (
+      <div className="min-h-screen bg-background flex flex-col">
+        <Header />
+        <main className="flex-1 pt-32 pb-16 flex items-center justify-center">
+          <div className="max-w-2xl mx-auto text-center px-8">
+            <CheckCircle className="w-24 h-24 text-primary mx-auto mb-6" />
+            <h1 className="font-heading text-6xl text-soft-white mb-4">¡Pago Exitoso!</h1>
+            <p className="font-paragraph text-xl text-soft-white/80 mb-8">
+              Tu pago de $3.00 USD ha sido procesado. Ahora puedes subir tu contenido.
+            </p>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
