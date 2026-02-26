@@ -10,6 +10,7 @@ import { BaseCrudService } from '@/integrations';
 import { ContentSubmissions } from '@/entities';
 import { ArrowRight, Clock, Eye, ShieldAlert, Zap, Globe, Lock, Maximize2, Minimize2 } from 'lucide-react';
 import { Image } from '@/components/ui/image';
+import { useTimerStore } from '@/stores/timerStore';
 
 // --- Utility Components for Motion & Layout ---
 
@@ -63,33 +64,38 @@ export default function HomePage() {
   const stageRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef });
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
+  
+  // Timer store for persistent timer across page reloads
+  const { startTime, setStartTime, getTimeRemaining, resetTimer } = useTimerStore();
 
   // --- Initial Load ---
   useEffect(() => {
     loadCurrentContent();
   }, []);
 
-  // --- Timer Logic - Only runs when content exists ---
+  // --- Timer Logic - Global timer that persists across page reloads ---
   useEffect(() => {
     if (!currentContent) return;
 
-    setTimeRemaining(60);
+    // If no start time exists, initialize it
+    if (!startTime) {
+      resetTimer();
+    }
     
     const interval = setInterval(() => {
-      setTimeRemaining((prev) => {
-        const newTime = prev - 1;
-        if (newTime <= 0) {
-          // Remove current content and load next
-          BaseCrudService.delete('contentsubmissions', currentContent._id);
-          loadCurrentContent();
-          return 60;
-        }
-        return newTime;
-      });
+      const remaining = getTimeRemaining();
+      setTimeRemaining(remaining);
+      
+      if (remaining <= 0) {
+        // Remove current content and load next
+        BaseCrudService.delete('contentsubmissions', currentContent._id);
+        resetTimer(); // Reset timer for next content
+        loadCurrentContent();
+      }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [currentContent]);
+  }, [currentContent, startTime]);
 
   // --- Real-time Visitor Counter ---
   useEffect(() => {
@@ -124,10 +130,13 @@ export default function HomePage() {
       const nextContent = items[0];
       if (nextContent) {
         setCurrentContent(nextContent);
+        // Reset timer when new content loads
+        resetTimer();
       }
       setRecentContent(items.slice(0, 4)); 
     } else {
       setCurrentContent(null);
+      setTimeRemaining(60);
     }
   };
 

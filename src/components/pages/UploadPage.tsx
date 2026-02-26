@@ -56,8 +56,17 @@ export default function UploadPage() {
     setIsProcessing(true);
 
     try {
-      const blobUrl = URL.createObjectURL(contentFile);
-      await createSubmission(blobUrl, contentFile.type);
+      // Convert file to base64
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        const base64Content = e.target?.result as string;
+        await createSubmission(base64Content, contentFile.type);
+      };
+      reader.onerror = () => {
+        setIsProcessing(false);
+        alert('Error al leer el archivo. Por favor intenta de nuevo.');
+      };
+      reader.readAsDataURL(contentFile);
     } catch (error) {
       console.error('Upload error:', error);
       setIsProcessing(false);
@@ -66,6 +75,7 @@ export default function UploadPage() {
   };
 
   const createSubmission = async (fileContent: string, fileType: string) => {
+    const now = new Date();
     const submission: ContentSubmissions = {
       _id: crypto.randomUUID(),
       userEmail: email,
@@ -73,7 +83,8 @@ export default function UploadPage() {
       contentType: 'video',
       reviewStatus: 'approved',
       ageAndContentConfirmed: true,
-      submissionDate: new Date().toISOString(),
+      submissionDate: now.toISOString(),
+      aiReviewTimestamp: now.toISOString(),
       moderatorNotes: 'Free upload - no payment required'
     };
 
