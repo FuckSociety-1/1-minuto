@@ -27,7 +27,7 @@ export default function ConfirmationPage() {
             
             <div className="space-y-4">
               <h1 className="font-heading text-6xl text-soft-white">
-                ¡Pago Confirmado!
+                ¡Contenido Enviado!
               </h1>
               <p className="font-paragraph text-xl text-soft-white/80">
                 Tu contenido está en revisión
@@ -56,7 +56,7 @@ export default function ConfirmationPage() {
 
               <div className="p-4 bg-primary/10 border border-primary/30 rounded-lg">
                 <p className="font-paragraph text-sm text-soft-white/80">
-                  Recuerda: El pago es único y no reembolsable. Solo se mostrará contenido que cumpla con nuestras políticas de uso.
+                  Recuerda: Solo se mostrará contenido que cumpla con nuestras políticas de uso.
                 </p>
               </div>
             </div>
