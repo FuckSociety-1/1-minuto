@@ -64,18 +64,23 @@ export default function HomePage() {
   const { scrollYProgress } = useScroll({ target: containerRef });
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
-  // --- Data Fidelity Protocol: Preservation of Logic ---
+  // --- Initial Load ---
   useEffect(() => {
     loadCurrentContent();
+  }, []);
+
+  // --- Timer Logic - Only runs when content exists ---
+  useEffect(() => {
+    if (!currentContent) return;
+
+    setTimeRemaining(60);
     
     const interval = setInterval(() => {
       setTimeRemaining((prev) => {
         const newTime = prev - 1;
         if (newTime <= 0) {
           // Remove current content and load next
-          if (currentContent) {
-            BaseCrudService.delete('contentsubmissions', currentContent._id);
-          }
+          BaseCrudService.delete('contentsubmissions', currentContent._id);
           loadCurrentContent();
           return 60;
         }
@@ -251,7 +256,6 @@ export default function HomePage() {
                       ) : (
                         <video
                           src={currentContent.submittedContent}
-                          controls
                           className="w-full h-full object-contain opacity-[0.97]"
                           autoPlay
                           muted
@@ -261,20 +265,22 @@ export default function HomePage() {
                   )}
                 </AnimatePresence>
                 
-                {/* Stage UI Elements */}
-                <div className="absolute top-6 right-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                  <button
-                    onClick={toggleFullscreen}
-                    className="p-2 rounded hover:bg-soft-white/10 transition-colors"
-                    title={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
-                  >
-                    {isFullscreen ? (
-                      <Minimize2 className="w-5 h-5 text-soft-white" />
-                    ) : (
-                      <Maximize2 className="w-5 h-5 text-soft-white" />
-                    )}
-                  </button>
-                </div>
+                {/* Stage UI Elements - Only show when content exists */}
+                {currentContent && (
+                  <div className="absolute top-6 right-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                    <button
+                      onClick={toggleFullscreen}
+                      className="p-2 rounded hover:bg-soft-white/10 transition-colors"
+                      title={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+                    >
+                      {isFullscreen ? (
+                        <Minimize2 className="w-5 h-5 text-soft-white" />
+                      ) : (
+                        <Maximize2 className="w-5 h-5 text-soft-white" />
+                      )}
+                    </button>
+                  </div>
+                )}
               </div>
               {/* Decorative Elements */}
               <div className="absolute -bottom-6 -left-6 w-24 h-24 border-l border-b border-primary/30" />
