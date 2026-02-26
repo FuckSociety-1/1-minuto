@@ -79,7 +79,7 @@ export default function HomePage() {
         }
         return prev - 1;
       });
-    }, 1000);
+    }, 500);
 
     return () => clearInterval(interval);
   }, [currentContent]);
