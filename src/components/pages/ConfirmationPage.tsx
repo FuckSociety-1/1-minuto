@@ -35,15 +35,6 @@ export default function ConfirmationPage() {
             </div>
 
             <div className="bg-soft-white/5 border border-soft-white/10 rounded-2xl p-8 space-y-6">
-              <div className="space-y-2">
-                <p className="font-paragraph text-sm text-soft-white/60">
-                  ID de Confirmación
-                </p>
-                <p className="font-paragraph text-lg text-soft-white font-mono">
-                  {confirmationId}
-                </p>
-              </div>
-
               <div className="space-y-4 text-left">
                 <p className="font-paragraph text-base text-soft-white">
                   ¿Qué sigue?

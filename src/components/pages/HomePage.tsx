@@ -67,9 +67,11 @@ export default function HomePage() {
   // --- Data Fidelity Protocol: Preservation of Logic ---
   useEffect(() => {
     loadCurrentContent();
+    
     const interval = setInterval(() => {
       setTimeRemaining((prev) => {
-        if (prev <= 1) {
+        const newTime = prev - 1;
+        if (newTime <= 0) {
           // Remove current content and load next
           if (currentContent) {
             BaseCrudService.delete('contentsubmissions', currentContent._id);
@@ -77,7 +79,7 @@ export default function HomePage() {
           loadCurrentContent();
           return 60;
         }
-        return prev - 1;
+        return newTime;
       });
     }, 1000);
 
