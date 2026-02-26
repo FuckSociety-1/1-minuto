@@ -79,7 +79,7 @@ export default function HomePage() {
         }
         return prev - 1;
       });
-    }, 500);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, [currentContent]);
@@ -198,9 +198,9 @@ export default function HomePage() {
 
               <div className="flex flex-col gap-4">
                 <Button
-                  onClick={() => navigate('/purchase')}
+                  onClick={() => navigate('/upload')}
                   className="bg-primary hover:bg-primary/90 text-white font-paragraph text-lg px-10 py-8 rounded-none border-l-4 border-white/20 transition-all hover:border-white"
-                >{"Comprar - $3"}</Button>
+                >Subir Video</Button>
 
                 {/* Real-time Visitor Counter */}
                 <motion.div 
