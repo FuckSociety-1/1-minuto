@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-{/* ... keep existing code (Image import removed) */}
 import { BaseCrudService } from '@/integrations';
 import { ContentSubmissions } from '@/entities';
 import { ArrowRight, Clock, Eye, ShieldAlert, Zap, Globe, Lock, Maximize2, Minimize2 } from 'lucide-react';
@@ -92,10 +91,10 @@ export default function HomePage() {
         resetTimer(); // Reset timer for next content
         loadCurrentContent();
       }
-    }, 1000);
+    }, 100); // Update more frequently for smooth timer display
 
     return () => clearInterval(interval);
-  }, [currentContent, startTime]);
+  }, [currentContent]);
 
   // --- Real-time Visitor Counter ---
   useEffect(() => {
@@ -268,6 +267,7 @@ export default function HomePage() {
                           className="w-full h-full object-contain opacity-[0.97]"
                           autoPlay
                           muted
+                          controls
                         />
                       )}
                     </motion.div>
