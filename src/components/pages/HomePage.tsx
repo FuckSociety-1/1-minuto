@@ -204,7 +204,7 @@ export default function HomePage() {
                 </motion.div>
                 
                 <div className="relative">
-                  <h1 className="font-heading text-[12rem] leading-[0.8] text-soft-white mix-blend-difference tracking-tighter">
+                  <h1 className="text-[12rem] leading-[0.8] text-soft-white mix-blend-difference tracking-tighter font-heading">
                     {formatTime(timeRemaining)}
                   </h1>
 
